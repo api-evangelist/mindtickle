@@ -1,0 +1,65 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Mindtickle",
+  "url": "https://www.mindtickle.com/",
+  "description": "Mindtickle is an AI-powered revenue productivity platform that unifies sales enablement, training, coaching, conversation intelligence, and digital sales rooms into a single solution. It provides REST and GraphQL APIs for managing readiness programs, user provisioning, content, call intelligence, and analytics for revenue teams.",
+  "sameAs": [
+    "https://www.mindtickle.com/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "url": "https://www.mindtickle.com/contact-us/",
+    "contactType": "customer support"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mindtickle API Products",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Mindtickle REST API",
+        "description": "Core REST API for managing users, groups, modules, learner details, and reporting within the Mindtickle revenue productivity platform. Supports SCIM-based user provisioning and returns JSON responses.",
+        "url": "https://www.mindtickle.com/platform/integrations/"
+      },
+      {
+        "@type": "Offer",
+        "name": "Mindtickle Call AI Public API",
+        "description": "GraphQL public API providing programmatic access to call recordings, transcriptions, coaching scores, and conversation intelligence data from the Mindtickle Call AI platform. Authenticated via OAuth 2.0.",
+        "url": "https://www.mindtickle.com/call-ai-public-api-mindtickle/"
+      }
+    ]
+  },
+  "mainEntityOfPage": [
+    {
+      "@type": "WebPage",
+      "name": "Integrations",
+      "url": "https://www.mindtickle.com/platform/integrations/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Blog",
+      "url": "https://www.mindtickle.com/blog/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Security Policy",
+      "url": "https://www.mindtickle.com/security/policy/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Privacy Policy",
+      "url": "https://www.mindtickle.com/privacy-policy/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Terms of Service",
+      "url": "https://www.mindtickle.com/terms-of-service/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Status",
+      "url": "https://status.mindtickle.com"
+    }
+  ]
+}
