@@ -1,0 +1,50 @@
+name: Mindtickle Plans and Pricing
+description: Mindtickle uses custom enterprise pricing based on the number of licensed users, contract term length, and specific modules included. No self-serve tiers are publicly listed; pricing is disclosed during the sales process.
+url: https://www.mindtickle.com/platform/
+contact: https://www.mindtickle.com/request-demo/
+plans:
+  - name: Revenue Enablement Platform
+    description: Core readiness platform covering onboarding, training, content management, and analytics for revenue teams.
+    type: enterprise
+    pricing: custom
+    unit: per user / per year
+    features:
+      - Sales readiness programs
+      - Onboarding and training
+      - Content management
+      - Reporting and analytics
+      - SCIM-based user provisioning
+      - SSO (SAML, OpenID Connect, JWT)
+  - name: Call AI Add-on
+    description: Conversation intelligence module with call recording, transcription, coaching insights, and scoring via the public GraphQL API.
+    type: add-on
+    pricing: custom
+    unit: per user / per year
+    features:
+      - Call recording and transcription
+      - AI-powered call scoring
+      - Coaching insights
+      - GraphQL public API access
+  - name: Digital Sales Rooms Add-on
+    description: Buyer engagement module enabling sellers to share content and track prospect interactions in branded virtual rooms.
+    type: add-on
+    pricing: custom
+    unit: per user / per year
+    features:
+      - Branded digital sales rooms
+      - Buyer engagement tracking
+      - Content sharing and analytics
+  - name: Revenue Intelligence Add-on
+    description: Advanced analytics and forecasting capabilities for revenue leaders integrating with CRM data.
+    type: add-on
+    pricing: custom
+    unit: per user / per year
+    features:
+      - Pipeline forecasting
+      - Revenue analytics
+      - CRM integration
+notes:
+  - Pricing is not publicly listed; contact sales for a quote.
+  - Volume-based discounts are available.
+  - No hidden fees; pricing is disclosed upfront during the sales process.
+  - 24/7 support included; premium support packages available.

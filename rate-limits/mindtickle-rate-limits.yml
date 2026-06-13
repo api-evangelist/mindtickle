@@ -1,0 +1,21 @@
+name: Mindtickle API Rate Limits
+description: Mindtickle enforces rate limits on its REST API on a per-account basis. Exceeding limits results in HTTP 429 responses.
+url: https://www.mindtickle.com/platform/integrations/
+limits:
+  - scope: account
+    requests_per_second: 4
+    requests_per_minute: 60
+    notes: Limits apply per account regardless of how many API keys are in use.
+errors:
+  - code: 429
+    meaning: Rate limit exceeded
+    action: Implement exponential backoff and retry logic.
+  - code: 401
+    meaning: Missing or malformed JWT, or incorrect Secret Key
+    action: Regenerate credentials in the Mindtickle admin console under Settings > API Access.
+  - code: 403
+    meaning: Expired token (JWT validity is capped at 1 hour)
+    action: Re-generate a new JWT token before making subsequent requests.
+token_validity:
+  max_age_seconds: 3600
+  notes: JWT tokens expire after 1 hour. Refresh before expiry to avoid 403 errors.

@@ -1,0 +1,28 @@
+name: Mindtickle FinOps
+description: Financial operations guidance for organizations managing Mindtickle spend, API usage, and licensing costs.
+url: https://www.mindtickle.com/platform/
+pricing_model: per-user-subscription
+billing_frequency: annual
+cost_drivers:
+  - name: Licensed user count
+    description: The primary cost driver. Pricing scales with the number of customer-facing reps and managers provisioned on the platform.
+  - name: Module selection
+    description: Core platform, Call AI, Digital Sales Rooms, and Revenue Intelligence are each separately licensed add-ons.
+  - name: Contract term
+    description: Longer multi-year terms typically unlock lower per-user pricing.
+  - name: Premium support
+    description: Standard 24/7 support is included; dedicated Customer Success Manager and premium tiers carry additional cost.
+optimization_tips:
+  - Audit seat count quarterly and remove inactive users to avoid paying for unused licenses.
+  - Consolidate module subscriptions to only those actively used by revenue teams.
+  - Negotiate multi-year contracts for better per-user pricing.
+  - Use Reporting APIs (rather than professional services) for self-serve analytics to reduce services spend.
+  - Leverage SCIM auto-provisioning to prevent orphaned seats when employees leave.
+vendor_resources:
+  - name: Request Demo / Pricing
+    url: https://www.mindtickle.com/request-demo/
+  - name: Vendr Marketplace (benchmark pricing)
+    url: https://www.vendr.com/marketplace/mindtickle
+notes:
+  - No free tier or self-serve trial is publicly available.
+  - All contracts are negotiated; list prices are not published.
