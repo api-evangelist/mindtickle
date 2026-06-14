@@ -1,0 +1,295 @@
+# Mindtickle Call AI GraphQL Schema
+# Source: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+# Endpoint: https://api-gateway.callai.www.mindtickle.com/public/graphapi
+# Authentication: OAuth 2.0 Bearer token
+#
+# Note: Mindtickle provides a GraphQL API for its Call AI (conversation intelligence)
+# product. The schema below reflects confirmed fields from the public API documentation.
+# The REST API (api.mindtickle.com) covers users, programs, modules, and reporting.
+
+# ──────────────────────────────────────────
+# Enums
+# ──────────────────────────────────────────
+
+enum SortOrder {
+  asc
+  desc
+}
+
+enum SortType {
+  score
+  start_date
+  call_score
+  last_shared
+}
+
+"""
+Determines the scope of recordings returned.
+"""
+enum RecordingCategory {
+  ALL            # Platform-wide access
+  PARTICIPANT    # Recordings the user participated in
+  SHARED         # Recordings shared with the user
+  BOOKMARKED     # Bookmarked recordings
+  TEAM           # Recordings with team participation
+  USER_SHARED    # Recordings shared by the user
+}
+
+# ──────────────────────────────────────────
+# Input Types
+# ──────────────────────────────────────────
+
+input DateRangeFilter {
+  start: String   # ISO 8601 timestamp
+  end: String     # ISO 8601 timestamp
+}
+
+input DurationFilter {
+  minMilliseconds: Int  # Minimum recording length in milliseconds
+}
+
+input RecordingsV2Filters {
+  """
+  Required. Determines recording scope.
+  """
+  categoryId: RecordingCategory!
+
+  """
+  Optional date range filter.
+  """
+  date: DateRangeFilter
+
+  """
+  Optional filter for recordings exceeding a minimum duration.
+  """
+  duration: DurationFilter
+}
+
+input RecordingSort {
+  sortOrder: SortOrder!
+  sortType: SortType!
+}
+
+# ──────────────────────────────────────────
+# Types — Call AI (Conversation Intelligence)
+# ──────────────────────────────────────────
+
+type PageInfo {
+  hasNextPage: Boolean!
+  endCursor: String
+}
+
+type Participant {
+  id: ID
+  name: String
+  email: String
+  role: String        # e.g. host, attendee
+}
+
+type TranscriptSegment {
+  speakerId: ID
+  speakerName: String
+  text: String
+  startTime: Int      # milliseconds from recording start
+  endTime: Int
+}
+
+type CoachingScore {
+  score: Float
+  maxScore: Float
+  category: String
+}
+
+type Recording {
+  id: ID!
+  title: String
+  startDate: String       # ISO 8601 timestamp
+  duration: Int           # milliseconds
+  callScore: Float
+  score: Float
+  lastShared: String      # ISO 8601 timestamp
+  participants: [Participant]
+  transcript: [TranscriptSegment]
+  coachingScores: [CoachingScore]
+  recordingUrl: String
+  isBookmarked: Boolean
+}
+
+type RecordingEdge {
+  node: Recording
+  cursor: String
+}
+
+type RecordingConnection {
+  edges: [RecordingEdge]
+  pageInfo: PageInfo!
+  totalCount: Int
+}
+
+# ──────────────────────────────────────────
+# Types — Sales Readiness (REST-derived data model)
+# These types reflect the Mindtickle REST API domain objects.
+# They are documented here as GraphQL types for reference.
+# ──────────────────────────────────────────
+
+type User {
+  id: ID!
+  email: String!
+  firstName: String
+  lastName: String
+  role: String
+  teamId: ID
+  managerId: ID
+  active: Boolean
+  createdAt: String
+  updatedAt: String
+}
+
+type Team {
+  id: ID!
+  name: String
+  managerId: ID
+  members: [User]
+}
+
+type Manager {
+  id: ID!
+  userId: ID!
+  teamId: ID
+  directReports: [User]
+}
+
+type Module {
+  id: ID!
+  name: String
+  description: String
+  type: String         # e.g. video, quiz, document
+  contentUrl: String
+  duration: Int        # seconds
+  createdAt: String
+  updatedAt: String
+}
+
+type Program {
+  id: ID!
+  name: String
+  description: String
+  modules: [Module]
+  assignedUsers: [User]
+  dueDate: String
+  createdAt: String
+  updatedAt: String
+}
+
+type Assessment {
+  id: ID!
+  name: String
+  programId: ID
+  questions: [Question]
+  passingScore: Float
+}
+
+type Question {
+  id: ID!
+  text: String
+  type: String         # multiple_choice, true_false, free_form
+  options: [String]
+  correctAnswer: String
+}
+
+type Mission {
+  id: ID!
+  name: String
+  description: String
+  assignedUsers: [User]
+  dueDate: String
+  status: String
+}
+
+type Challenge {
+  id: ID!
+  name: String
+  missionId: ID
+  type: String         # pitch, roleplay, quiz
+  dueDate: String
+  status: String
+}
+
+type CoachingSession {
+  id: ID!
+  recordingId: ID
+  coachId: ID
+  learnerId: ID
+  score: Float
+  feedback: String
+  createdAt: String
+}
+
+type AnalyticsReport {
+  id: ID!
+  reportType: String
+  userId: ID
+  programId: ID
+  completionRate: Float
+  averageScore: Float
+  generatedAt: String
+}
+
+type Leaderboard {
+  id: ID!
+  name: String
+  programId: ID
+  entries: [LeaderboardEntry]
+}
+
+type LeaderboardEntry {
+  rank: Int
+  userId: ID!
+  userName: String
+  score: Float
+  completionRate: Float
+}
+
+type Content {
+  id: ID!
+  title: String
+  type: String         # video, document, quiz, roleplay
+  url: String
+  tags: [String]
+  createdAt: String
+  updatedAt: String
+}
+
+# ──────────────────────────────────────────
+# Root Types
+# ──────────────────────────────────────────
+
+type Query {
+  """
+  Retrieve paginated call recordings from the Call AI platform.
+  Confirmed from public API documentation.
+  """
+  recordingsV2(
+    first: Int
+    after: String!
+    filters: RecordingsV2Filters!
+    sort: [RecordingSort]
+  ): RecordingConnection
+
+  # REST-domain placeholders (not confirmed as live GraphQL queries)
+  user(id: ID!): User
+  users(teamId: ID, managerId: ID, active: Boolean): [User]
+  program(id: ID!): Program
+  programs: [Program]
+  module(id: ID!): Module
+  modules(programId: ID): [Module]
+  assessment(id: ID!): Assessment
+  mission(id: ID!): Mission
+  challenge(id: ID!): Challenge
+  leaderboard(programId: ID!): Leaderboard
+  analyticsReport(userId: ID, programId: ID, reportType: String): AnalyticsReport
+}
+
+type Mutation {
+  placeholder: String
+}

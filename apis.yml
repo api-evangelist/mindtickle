@@ -1,6 +1,10 @@
 aid: mindtickle
 name: Mindtickle
-description: Mindtickle is an AI-powered revenue productivity platform that unifies sales enablement, training, coaching, conversation intelligence, and digital sales rooms into a single solution. It provides REST and GraphQL APIs for managing readiness programs, user provisioning, content, call intelligence, and analytics for revenue teams.
+description: Mindtickle is an AI-powered revenue productivity platform that unifies
+  sales enablement, training, coaching, conversation intelligence, and digital sales
+  rooms into a single solution. It provides REST and GraphQL APIs for managing readiness
+  programs, user provisioning, content, call intelligence, and analytics for revenue
+  teams.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/mindtickle/refs/heads/main/apis.yml
@@ -8,79 +12,87 @@ created: '2026-06-13'
 modified: '2026-06-13'
 specificationVersion: '0.19'
 tags:
-  - Sales Enablement
-  - Revenue Productivity
-  - Sales Readiness
-  - Coaching
-  - Conversation Intelligence
-  - Learning Management
-  - Content Management
-  - Call AI
-  - Revenue Intelligence
+- Sales Enablement
+- Revenue Productivity
+- Sales Readiness
+- Coaching
+- Conversation Intelligence
+- Learning Management
+- Content Management
+- Call AI
+- Revenue Intelligence
 apis:
-  - aid: mindtickle:mindtickle-rest-api
-    name: Mindtickle REST API
-    description: Core REST API for managing users, groups, modules, learner details, and reporting within the Mindtickle revenue productivity platform. Supports SCIM-based user provisioning and returns JSON responses.
-    humanURL: https://www.mindtickle.com/platform/integrations/
-    baseURL: https://api.mindtickle.com
-    tags:
-      - Users
-      - Groups
-      - Modules
-      - Reporting
-      - Analytics
-    properties:
-      - type: Documentation
-        url: https://www.mindtickle.com/platform/integrations/
-      - type: Authentication
-        url: https://www.mindtickle.com/technical-and-organizational-security-measures/
-  - aid: mindtickle:mindtickle-call-ai-graphql-api
-    name: Mindtickle Call AI Public API
-    description: GraphQL public API providing programmatic access to call recordings, transcriptions, coaching scores, and conversation intelligence data from the Mindtickle Call AI platform. Authenticated via OAuth 2.0.
-    humanURL: https://www.mindtickle.com/call-ai-public-api-mindtickle/
-    baseURL: https://api-gateway.callai.www.mindtickle.com/public/graphapi
-    tags:
-      - Call Intelligence
-      - Recordings
-      - Coaching
-      - GraphQL
-      - OAuth
-    properties:
-      - type: Documentation
-        url: https://www.mindtickle.com/call-ai-public-api-mindtickle/
-common:
-  - type: Website
-    url: https://www.mindtickle.com/
+- aid: mindtickle:mindtickle-rest-api
+  name: Mindtickle REST API
+  description: Core REST API for managing users, groups, modules, learner details,
+    and reporting within the Mindtickle revenue productivity platform. Supports SCIM-based
+    user provisioning and returns JSON responses.
+  humanURL: https://www.mindtickle.com/platform/integrations/
+  baseURL: https://api.mindtickle.com
+  tags:
+  - Users
+  - Groups
+  - Modules
+  - Reporting
+  - Analytics
+  properties:
   - type: Documentation
     url: https://www.mindtickle.com/platform/integrations/
-  - type: Blog
-    url: https://www.mindtickle.com/blog/
-  - type: News
-    url: https://www.mindtickle.com/news/
-  - type: Status
-    url: https://status.mindtickle.com
-  - type: Login
-    url: https://app.mindtickle.com/
-  - type: Support
-    url: https://help.mindtickle.com/
-  - type: Contact
-    url: https://www.mindtickle.com/contact-us/
-  - type: PrivacyPolicy
-    url: https://www.mindtickle.com/privacy-policy/
-  - type: TermsOfService
-    url: https://www.mindtickle.com/terms-of-service/
-  - type: Security
-    url: https://www.mindtickle.com/security/policy/
-  - type: IntegrationPlatform
-    url: https://www.mindtickle.com/platform/integrations/
-  - type: Salesforce
-    url: https://www.mindtickle.com/platform-integrations-salesforce/
-  - type: Plans
-    url: plans/mindtickle-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/mindtickle-rate-limits.yml
-  - type: FinOps
-    url: finops/mindtickle-finops.yml
+  - type: Authentication
+    url: https://www.mindtickle.com/technical-and-organizational-security-measures/
+- aid: mindtickle:mindtickle-call-ai-graphql-api
+  name: Mindtickle Call AI Public API
+  description: GraphQL public API providing programmatic access to call recordings,
+    transcriptions, coaching scores, and conversation intelligence data from the Mindtickle
+    Call AI platform. Authenticated via OAuth 2.0.
+  humanURL: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+  baseURL: https://api-gateway.callai.www.mindtickle.com/public/graphapi
+  tags:
+  - Call Intelligence
+  - Recordings
+  - Coaching
+  - GraphQL
+  - OAuth
+  properties:
+  - type: Documentation
+    url: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+  - url: graphql/mindtickle-graphql.md
+    type: GraphQL
+  - url: graphql/mindtickle-schema.graphql
+    type: GraphQLSchema
+common:
+- type: Website
+  url: https://www.mindtickle.com/
+- type: Documentation
+  url: https://www.mindtickle.com/platform/integrations/
+- type: Blog
+  url: https://www.mindtickle.com/blog/
+- type: News
+  url: https://www.mindtickle.com/news/
+- type: Status
+  url: https://status.mindtickle.com
+- type: Login
+  url: https://app.mindtickle.com/
+- type: Support
+  url: https://help.mindtickle.com/
+- type: Contact
+  url: https://www.mindtickle.com/contact-us/
+- type: PrivacyPolicy
+  url: https://www.mindtickle.com/privacy-policy/
+- type: TermsOfService
+  url: https://www.mindtickle.com/terms-of-service/
+- type: Security
+  url: https://www.mindtickle.com/security/policy/
+- type: IntegrationPlatform
+  url: https://www.mindtickle.com/platform/integrations/
+- type: Salesforce
+  url: https://www.mindtickle.com/platform-integrations-salesforce/
+- type: Plans
+  url: plans/mindtickle-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/mindtickle-rate-limits.yml
+- type: FinOps
+  url: finops/mindtickle-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
