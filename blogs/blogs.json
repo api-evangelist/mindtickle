@@ -33,5 +33,17 @@
       "url": "https://www.mindtickle.com/blog/buyers-guide-ai-role-play-platforms/",
       "read_time_minutes": 18
     }
-  ]
+  ],
+  "repo": "mindtickle",
+  "feeds": [
+    {
+      "source": "https://www.mindtickle.com/platform/integrations/",
+      "feed_url": "https://www.mindtickle.com/platform/integrations/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-06-14T20:42:17Z"
 }
