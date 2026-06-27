@@ -1,49 +1,20 @@
 {
-  "aid": "mindtickle",
-  "url": "https://www.mindtickle.com/blog/",
-  "pulled": "2026-06-13",
-  "posts": [
-    {
-      "title": "What Great Sales Onboarding Looks Like and How AI Agents Could Deliver It From Day 1",
-      "url": "https://www.mindtickle.com/blog/what-great-sales-onboarding-looks-like-with-ai-agents/",
-      "read_time_minutes": 7
-    },
-    {
-      "title": "How to Manage Complex B2B Deals With Multiple Stakeholders Using Digital Sales Rooms",
-      "url": "https://www.mindtickle.com/blog/how-to-manage-complex-b2b-deals-with-digital-sales-room/",
-      "read_time_minutes": 8
-    },
-    {
-      "title": "How Agentic AI Is Changing Sales Enablement",
-      "url": "https://www.mindtickle.com/blog/how-agentic-ai-changes-sales-enablement/",
-      "read_time_minutes": 9
-    },
-    {
-      "title": "Mindtickle vs. Highspot: Which Enablement Platform Drives Revenue Readiness in 2026?",
-      "url": "https://www.mindtickle.com/blog/mindtickle-vs-highspot-comparison-best-revenue-enablement-platform/",
-      "read_time_minutes": 13
-    },
-    {
-      "title": "Metrics to Measure your AI Sales Role Plays",
-      "url": "https://www.mindtickle.com/blog/metrics-to-measure-your-ai-sales-role-plays/",
-      "read_time_minutes": 7
-    },
-    {
-      "title": "A Sales Enablement Buyer's Guide to AI Sales Role Play Platforms",
-      "url": "https://www.mindtickle.com/blog/buyers-guide-ai-role-play-platforms/",
-      "read_time_minutes": 18
-    }
-  ],
   "repo": "mindtickle",
   "feeds": [
     {
-      "source": "https://www.mindtickle.com/platform/integrations/",
-      "feed_url": "https://www.mindtickle.com/platform/integrations/",
-      "title": "",
+      "source": "https://www.mindtickle.com/blog/",
+      "feed_url": "",
       "saved": 0,
-      "method": "none"
+      "method": "agent-scrape"
+    },
+    {
+      "source": "https://www.mindtickle.com/platform/integrations/",
+      "feed_url": "",
+      "saved": 0,
+      "method": "agent-scrape"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 2,
+  "fetched": "2026-06-27T12:54:28Z",
+  "agent_pulled": "2026-06-27"
 }
