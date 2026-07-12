@@ -61,6 +61,10 @@ apis:
   - url: graphql/mindtickle-schema.graphql
     type: GraphQLSchema
 common:
+- type: TrustCenter
+  url: security/mindtickle-trust-center.yml
+- type: DomainSecurity
+  url: security/mindtickle-domain-security.yml
 - type: Website
   url: https://www.mindtickle.com/
 - type: Documentation
