@@ -21,7 +21,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mindtickle.png
 url: https://raw.githubusercontent.com/api-evangelist/mindtickle/refs/heads/main/apis.yml
 created: '2026-06-13'
-modified: '2026-06-13'
+modified: '2026-08-14'
 specificationVersion: '0.19'
 tags:
 - Sales Enablement
@@ -68,6 +68,8 @@ apis:
   properties:
   - type: Documentation
     url: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+  - type: APIReference
+    url: https://www.mindtickle.com/call-ai-public-api-mindtickle/
   - url: graphql/mindtickle-graphql.md
     type: GraphQL
   - url: graphql/mindtickle-schema.graphql
@@ -109,6 +111,41 @@ common:
   url: rate-limits/mindtickle-rate-limits.yml
 - type: FinOps
   url: finops/mindtickle-finops.yml
+- type: LLMsTxt
+  url: llms/mindtickle-llms.txt
+- type: WellKnown
+  url: well-known/mindtickle-well-known.yml
+- type: Authentication
+  url: authentication/mindtickle-authentication.yml
+- type: OAuthScopes
+  url: scopes/mindtickle-scopes.yml
+- type: VulnerabilityDisclosure
+  url: security/mindtickle-vulnerability-disclosure.yml
+- type: Lifecycle
+  url: lifecycle/mindtickle-lifecycle.yml
+- type: StatusPage
+  url: https://status.mindtickle.com/
+- type: SLA
+  url: https://www.mindtickle.com/service-level-agreement/
+- type: Conformance
+  url: conformance/mindtickle-conformance.yml
+- type: Compliance
+  url: https://www.mindtickle.com/compliance/
+- type: Conventions
+  url: conventions/mindtickle-conventions.yml
+- type: Packages
+  url: packages/mindtickle-packages.yml
+- type: ErrorCatalog
+  url: errors/mindtickle-problem-types.yml
+- type: DataModel
+  url: data-model/mindtickle-data-model.yml
+- type: GitHubOrganization
+  url: https://github.com/MindTickle
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-14'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1
