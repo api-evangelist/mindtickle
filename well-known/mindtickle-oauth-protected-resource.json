@@ -1,0 +1,18 @@
+{
+  "resource": "https://app.mindtickle.com",
+  "authorization_servers": [
+    "https://app.mindtickle.com"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ],
+  "scopes_supported": [
+    "read:ai_roleplays",
+    "read:calls",
+    "read:copilot_chat",
+    "read:rooms",
+    "read:search",
+    "write:ai_roleplays",
+    "write:rooms"
+  ]
+}

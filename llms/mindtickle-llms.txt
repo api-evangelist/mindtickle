@@ -1,0 +1,118 @@
+# Mindtickle
+
+> Mindtickle is an AI-powered Revenue Enablement Platform used by B2B sales organizations to ramp reps faster, improve sales readiness, and drive consistent revenue performance. The platform combines sales training, coaching, content management, conversation intelligence, digital sales rooms, and AI roleplay into a unified system. Its flagship AI layer — ElevateOS — is an agentic operating system that learns from a decade of rep behavior data to coach, guide, and act on every deal.
+
+Mindtickle serves VP/Director-level revenue leaders, sales enablement managers, sales operations, frontline sales managers, and L&D professionals at mid-market and enterprise B2B companies across industries including technology, automotive, medical devices, consumer goods, and chemicals.
+
+---
+
+## Table of Contents
+
+- [Core / Company](#core--company)
+- [Platform & Products](#platform--products)
+- [ElevateOS (AI Layer)](#elevateos-ai-layer)
+- [Solutions by Role & Use Case](#solutions-by-role--use-case)
+- [Services](#services)
+- [Competitive Comparisons](#competitive-comparisons)
+- [Resources & Learning](#resources--learning)
+- [Trust, Security & Accessibility](#trust-security--accessibility)
+- [Customer Evidence](#customer-evidence)
+
+---
+
+## Core / Company
+
+- [Home](https://www.mindtickle.com/): Overview of Mindtickle's Revenue Enablement Platform; covers the core value proposition of ramping reps faster, elevating performance, and driving quota attainment.
+- [About Us](https://www.mindtickle.com/about-us/): Company background, mission, leadership team, founding story, and values; explains why Mindtickle exists and how it approaches revenue enablement differently.
+- [Why Choose Mindtickle](https://www.mindtickle.com/why-mindtickle/): Side-by-side rationale for choosing Mindtickle over alternatives; covers differentiated capabilities, customer outcomes, analyst recognition, and platform depth.
+- [Contact Us](https://www.mindtickle.com/contact-us/): Primary contact page for sales inquiries, partnerships, press, and support; includes office locations and regional contact options.
+- [Request a Demo](https://www.mindtickle.com/request-a-demo/): Main demand-generation entry point where prospects can schedule a personalized product demonstration with the Mindtickle sales team.
+- [Sitemap](https://www.mindtickle.com/sitemap.xml): Full XML sitemap listing every indexed URL on the Mindtickle domain.
+
+---
+
+## Platform & Products
+
+- [Platform Overview](https://www.mindtickle.com/platform/): High-level overview of the complete Revenue Enablement Platform; describes how all product modules connect — training, coaching, content, and buyer engagement — in one unified system.
+- [Revenue Enablement Platform](https://www.mindtickle.com/revenue-enablement-platform/): Dedicated landing page articulating the full scope of Mindtickle as a revenue enablement system, including how it ties rep readiness to deal outcomes.
+- [AI Sales Role Play](https://www.mindtickle.com/platform/ai-sales-role-play/): Product page for Mindtickle's AI-powered role play feature; explains how reps practice sales conversations with an AI buyer persona that scores and provides feedback.
+- [AI Role Play Simulator](https://www.mindtickle.com/ai-role-play-simulator/): Dedicated experience page for the AI role play simulator, with an interactive demo-like interface showcasing the simulation in action.
+- [AI Roleplay Demo Platform](https://roleplay.mindtickle.com/): Live interactive demo of the AI roleplay capability where visitors can directly experience a simulated sales conversation.
+- [Copilot](https://www.mindtickle.com/platform/copilot/): AI Copilot product page; describes how Mindtickle's in-meeting and deal-level AI assistant guides reps with real-time talk tracks, objection handling, and next-best-action suggestions.
+- [Sales Training & Programs](https://www.mindtickle.com/platform/sales-enablement-programs-training/): Product page for Mindtickle's LMS and structured training programs; covers how enablement teams build, assign, and track onboarding and ongoing sales training.
+- [Sales Content Management](https://www.mindtickle.com/platform/sales-content-management-solutions/): Details Mindtickle's content management capabilities; explains how reps find, use, and share the right content at every stage of the sales cycle.
+- [Sales Coaching Software](https://www.mindtickle.com/platform/sales-coaching-software/): Product page for structured coaching workflows; explains how managers use call recordings, scorecards, and AI insights to coach reps at scale.
+- [Conversation Intelligence](https://www.mindtickle.com/platform/conversation-intelligence/): Product page for call recording, AI transcription, and deal intelligence; explains how teams analyze every customer conversation to surface winning behaviors and risk signals.
+- [Digital Sales Room](https://www.mindtickle.com/platform/digital-sales-room/): Product page for Mindtickle's buyer-facing digital sales rooms; describes how sellers create personalized microsites to share content, track engagement, and accelerate deals.
+- [Sales Readiness Index](https://www.mindtickle.com/platform/analyze-sales-team-performance-sales-readiness-index/): Explains Mindtickle's proprietary Sales Readiness Index, a composite score that measures each rep's readiness to sell based on knowledge, skills, and behaviors.
+- [Sales Enablement Analytics](https://www.mindtickle.com/platform/sales-enablement-analytics-software/): Product page for enablement analytics and dashboards; covers how enablement leaders measure program effectiveness, content performance, and rep readiness at scale.
+- [Integrations](https://www.mindtickle.com/platform/integrations/): Full list of native integrations including CRM (Salesforce, HubSpot), conferencing (Zoom, Teams), and HRIS tools; explains how Mindtickle fits into existing GTM tech stacks.
+- [Docket Testing](https://www.mindtickle.com/platform/docket-testing/): Describes knowledge assessment and certification testing capabilities within the Mindtickle platform for verifying rep readiness.
+- [Product Tour](https://www.mindtickle.com/product-tour/): Interactive or guided product tour page allowing prospects to explore key platform features without a full demo commitment.
+- [Accessibility](https://www.mindtickle.com/product/accessibility/): Mindtickle's accessibility standards and WCAG compliance documentation for enterprise procurement and IT reviews.
+- [Browser & Device Support](https://www.mindtickle.com/product/browsers-and-device-support/): Technical documentation on which browsers, operating systems, and devices are supported by the Mindtickle platform.
+
+---
+
+## ElevateOS (AI Layer)
+
+- [ElevateOS](https://www.mindtickle.com/ai/): Landing page for ElevateOS, Mindtickle's agentic AI operating system for revenue enablement; explains how it unifies training, coaching, deal intelligence, and buyer engagement into a single AI-native layer powered by a decade of rep behavior data.
+
+---
+
+## Solutions by Role & Use Case
+
+- [Solutions Overview](https://www.mindtickle.com/solutions/): Master solutions page listing all role-based and use-case-based solution packages available from Mindtickle.
+- [AI Sales Coaching](https://www.mindtickle.com/solutions/ai-sales-coaching/): Solution page for AI-driven sales coaching; explains how Mindtickle uses AI to identify top-performer behaviors and systematically replicate them across the sales team.
+- [Buyer Engagement](https://www.mindtickle.com/solutions/buyer-engagement/): Solution for creating tailored buyer experiences that accelerate pipeline velocity; covers digital sales rooms, personalized content, and engagement analytics.
+- [Sales Onboarding](https://www.mindtickle.com/solutions/sales-onboarding-tools-software/): Solution page for new rep onboarding programs; covers structured ramp plans, knowledge certification, and time-to-productivity benchmarks.
+- [Sales Training for Sales Teams](https://www.mindtickle.com/solutions/sales-training-software-for-sales-teams/): Use-case page targeting frontline sales reps; explains how personalized training programs close skill gaps and turn potential into consistent performance.
+- [Sales Readiness Certification](https://www.mindtickle.com/solutions/sales-readiness-certification/): Explains certification workflows for validating rep readiness; covers product, messaging, and compliance certifications.
+- [Sales Kickoff Programs](https://www.mindtickle.com/solutions/sales-kickoff-program/): Solution for planning, running, and reinforcing annual or quarterly sales kickoff events using Mindtickle's training and content infrastructure.
+- [For Sales Enablement Managers](https://www.mindtickle.com/solutions/programs-for-sales-enablement-managers/): Role-based solution page for sales enablement practitioners; explains how to design, deliver, and measure enablement programs that drive revenue outcomes.
+- [For Sales Managers / Frontline Managers](https://www.mindtickle.com/solutions/sales-manager-software-frontline-managers/): Solution tailored to frontline managers; covers manager dashboards, team readiness scoring, structured coaching cadences, and rep performance insights.
+- [For Sales Leadership](https://www.mindtickle.com/solutions/sales-leadership-solutions-training/): Executive-level solution page for VPs and CROs; covers GTM alignment, revenue productivity metrics, and how Mindtickle connects enablement to business outcomes.
+- [For Marketing Teams](https://www.mindtickle.com/solutions/marketing-teams/): Explains how marketing teams use Mindtickle to manage sales content, ensure message consistency, and measure content adoption by the sales team.
+- [Partner & Channel Enablement](https://www.mindtickle.com/solutions/partner-and-channel-enablement-software/): Solution page for enabling indirect sales channels; covers partner training, certification, and co-selling content management.
+- [Voice of the Customer](https://www.mindtickle.com/solutions/voice-of-the-customer-program-customer-experience-insights/): Explains how Mindtickle captures and systematizes customer insights from conversations to improve rep messaging and product positioning.
+
+---
+
+## Services
+
+- [Services Overview](https://www.mindtickle.com/services/): Overview of Mindtickle's professional services offerings, including implementation, strategic guidance, and ongoing support for enterprise customers.
+- [Get Started Quickly](https://www.mindtickle.com/services/get-started-quickly/): Service package details for fast-track onboarding; explains how Mindtickle's team helps new customers launch programs and achieve early wins rapidly.
+- [Achieve Ongoing Success](https://www.mindtickle.com/services/solutions-detail-achieve-ongoing-success/): Describes ongoing customer success services; covers strategic reviews, program optimization, and long-term partnership support.
+- [Scale with Experts](https://www.mindtickle.com/services/solutions-detail-scale-with-experts/): Details Mindtickle's expert advisory and managed services tier for customers looking to expand programs across larger or more complex organizations.
+
+---
+
+## Competitive Comparisons
+
+- [Mindtickle vs Highspot & Seismic](https://www.mindtickle.com/compare/mindtickle-vs-highspot-seismic/): Three-way competitive comparison of Mindtickle against Highspot and Seismic; highlights Mindtickle's integrated readiness + content + coaching advantage over point solutions.
+- [Mindtickle vs Seismic](https://www.mindtickle.com/mindtickle-vs-seismic/): Detailed head-to-head comparison with Seismic; covers feature gaps, customer outcomes, integration breadth, and total cost of ownership.
+- [Mindtickle vs Highspot](https://www.mindtickle.com/compare/mindtickle-vs-highspot/): Head-to-head comparison with Highspot; explains where Mindtickle's coaching, readiness, and AI capabilities differentiate from Highspot's content-first approach.
+- [Mindtickle vs Allego](https://www.mindtickle.com/compare/mindtickle-vs-allego/): Comparison with Allego covering training, video coaching, and AI features; explains Mindtickle's broader platform scope and enterprise-grade scalability.
+- [Mindtickle vs Showpad](https://www.mindtickle.com/compare/mindtickle-vs-showpad/): Comparison with Showpad; highlights differences in sales readiness depth, coaching workflows, and content management for enterprise revenue teams.
+
+---
+
+## Resources & Learning
+
+- [Blog](https://www.mindtickle.com/blog/): Editorial content hub covering sales enablement, revenue operations, AI in sales, coaching best practices, and GTM strategy; primary resource for thought leadership.
+- [Customer Stories](https://www.mindtickle.com/customer-stories/): Library of B2B customer case studies showing how revenue teams use Mindtickle to improve quota attainment, ramp time, and rep performance.
+- [Webinars](https://www.mindtickle.com/webinar/): Archive of on-demand and upcoming webinars covering sales enablement, AI in revenue, coaching methodologies, and platform best practices.
+- [Revenue Hub](https://www.mindtickle.com/revenue-hub/): Content hub aggregating research, guides, and tools for revenue enablement and sales performance improvement.
+
+---
+
+## Trust, Security & Accessibility
+
+- [Trust & Security](https://www.mindtickle.com/trust/): Mindtickle's security posture, data privacy practices, compliance certifications (SOC 2, GDPR, etc.), and enterprise trust documentation; essential for IT and procurement reviews.
+
+---
+
+## Optional
+
+- [Accessibility Statement](https://www.mindtickle.com/product/accessibility/): WCAG and ADA compliance documentation for enterprise IT and procurement teams evaluating accessibility requirements.
+- [Browser & Device Support](https://www.mindtickle.com/product/browsers-and-device-support/): Technical compatibility matrix for browsers, operating systems, and devices supported by the Mindtickle platform.

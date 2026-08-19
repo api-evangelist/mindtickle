@@ -1,0 +1,172 @@
+generated: '2026-08-14'
+method: derived
+source: >-
+  https://www.mindtickle.com/call-ai-public-api-mindtickle/ plus the repo's own
+  rate-limits/, authentication/ and well-known/ artifacts
+name: Mindtickle API conventions
+description: >-
+  Cross-cutting request/response semantics for the two Mindtickle API surfaces.
+  Mindtickle publishes no consolidated API conventions document, so this is
+  assembled from the one public API article (Call AI GraphQL), the anonymously
+  served OAuth discovery documents, and error/rate-limit behaviour recorded
+  elsewhere in this repo. Where a convention is genuinely undocumented it is
+  recorded as unknown rather than guessed.
+
+surfaces:
+- name: Mindtickle REST API
+  base: https://api.mindtickle.com
+  style: REST
+  format: JSON
+- name: Mindtickle Call AI Public API
+  base: https://api-gateway.callai.www.mindtickle.com/public/graphapi
+  style: GraphQL
+  format: JSON
+  availability_note: >-
+    This host is the one Mindtickle itself links from
+    https://www.mindtickle.com/call-ai-public-api-mindtickle/, so the base URL is
+    the provider's own. On 2026-08-14 it returned HTTP 502 from CloudFront
+    ("CloudFront wasn't able to connect to the origin") and its TLS certificate
+    does not cover the api-gateway hostname. Introspection could not be
+    attempted; no schema is claimed from it.
+
+authentication:
+  rest:
+    style: JWT bearer
+    header: 'Authorization: Bearer <jwt>'
+    credential_source: Mindtickle admin console, Settings > API Access (API Key + Secret Key + Client ID)
+    token_lifetime_seconds: 3600
+  graphql:
+    style: OAuth 2.0 bearer
+    header: 'Authorization: Bearer <access_token>'
+    authorization_server: https://app.mindtickle.com
+  reference: authentication/mindtickle-authentication.yml
+
+idempotency:
+  supported: false
+  header: null
+  scope: null
+  retention: null
+  note: >-
+    Mindtickle documents no idempotency key, no request-replay contract, and no
+    safe-retry guidance for its write operations. Recorded as absent. No
+    Idempotency pointer is emitted in apis.yml, because none is earned.
+
+pagination:
+  graphql:
+    style: cursor
+    spec: Relay Cursor Connections
+    request_params:
+    - name: first
+      required: false
+      description: Number of recordings to fetch
+    - name: after
+      required: true
+      description: Cursor position from which fetching starts
+    response_fields:
+    - edges[].node
+    - edges[].cursor
+    - pageInfo.hasNextPage
+    - pageInfo.endCursor
+    source: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+  rest:
+    style: unknown
+    note: Pagination parameters for the REST API are not publicly documented.
+
+sorting:
+  graphql:
+    param: sort
+    shape: array of {sortOrder, sortType}
+    sort_order_values: [asc, desc]
+    sort_type_values: [score, start_date, call_score, last_shared]
+    source: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+
+filtering:
+  graphql:
+    param: filters
+    shape: RecordingsV2Filters
+    fields:
+    - name: categoryId
+      required: true
+      description: >-
+        Recording scope - all accessible recordings, recordings you participated
+        in, shared with you, bookmarked by you, where you and your team
+        participated, or shared by you.
+    - name: date
+      required: false
+      description: Start/end timestamp pair
+    - name: duration
+      required: false
+      description: Minimum length in milliseconds
+    source: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+
+field_selection:
+  supported: true
+  mechanism: GraphQL selection sets
+  note: >-
+    The GraphQL surface gives clients native sparse-field selection. The REST
+    surface documents no expansion or sparse-fieldset mechanism.
+
+versioning:
+  rest:
+    style: uri-path
+    example: services/data/v2.0/mtobjects/{Object}/{id}
+    policy_published: false
+  graphql:
+    style: field-level
+    example: recordingsV2
+    policy_published: false
+  reference: lifecycle/mindtickle-lifecycle.yml
+
+error_envelope:
+  rest:
+    shape: unknown
+    documented: false
+    observed_anonymous:
+    - 'plain text: "learner not authenticated" (401 from app.mindtickle.com)'
+    - 'JSON: {"message": "no Route matched with those values", "request_id": "..."} (404 from the app gateway)'
+    problem_json: false
+  documented_statuses:
+  - status: 401
+    meaning: Missing or malformed JWT, or incorrect Secret Key
+  - status: 403
+    meaning: Expired token - JWT validity is capped at one hour
+  - status: 429
+    meaning: Rate limit exceeded
+  reference: errors/mindtickle-problem-types.yml
+
+rate_limiting:
+  documented: true
+  per_second: 4
+  per_minute: 60
+  scope: account
+  exhaustion_status: 429
+  response_headers: unknown
+  note: >-
+    Mindtickle publishes the numbers but not the runtime signal - no
+    X-RateLimit-*, RateLimit-* or Retry-After header is documented, so an agent
+    cannot read its remaining budget from a response.
+  reference: rate-limits/mindtickle-rate-limits.yml
+
+request_tracing:
+  header: x-request-id
+  direction: response
+  observed: true
+  evidence: >-
+    Every anonymous response from api.mindtickle.com and app.mindtickle.com
+    carries an x-request-id header (e.g. AGK-13d6-421c-a626-...); the app
+    gateway also returns request_id inside JSON error bodies. Not documented by
+    the provider, but consistently present.
+
+transport_security:
+  https_only: true
+  hsts: true
+  hsts_max_age: 31536000
+  tls: TLSv1.3
+  reference: security/mindtickle-domain-security.yml
+
+gaps:
+- No consolidated API conventions or developer-guide page is public.
+- No idempotency contract for writes.
+- No documented rate-limit response headers.
+- No documented REST pagination or error schema.
+- No published API changelog or deprecation policy.

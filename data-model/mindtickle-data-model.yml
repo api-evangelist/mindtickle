@@ -1,0 +1,122 @@
+generated: '2026-08-14'
+method: derived
+source: >-
+  https://www.mindtickle.com/call-ai-public-api-mindtickle/ and
+  graphql/mindtickle-schema.graphql
+name: Mindtickle data model
+description: >-
+  Entity graph for the parts of the Mindtickle domain that are publicly
+  documented. Only the Call AI (conversation intelligence) surface has a
+  published query contract, so only its entities are recorded as confirmed. The
+  REST domain objects are addressed through a single generic object path -
+  services/data/v2.0/mtobjects/{Object}/{id} - and Mindtickle publishes no
+  object reference, so those entities are recorded as named-but-unspecified
+  rather than modelled in detail.
+
+confirmed_surface: Call AI public GraphQL API
+confirmed_source: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+
+entities:
+- name: Recording
+  surface: graphql
+  confirmed: true
+  description: A recorded customer conversation analysed by Call AI.
+  key_fields: [id, title, startDate, duration, callScore, score, lastShared]
+  accessed_via: 'query recordingsV2(first, after, filters, sort)'
+- name: RecordingConnection
+  surface: graphql
+  confirmed: true
+  description: Relay cursor-connection wrapper returned by recordingsV2.
+  key_fields: [edges, pageInfo, totalCount]
+- name: Participant
+  surface: graphql
+  confirmed: true
+  description: A person present on a recorded conversation.
+- name: TranscriptSegment
+  surface: graphql
+  confirmed: true
+  description: A speaker-attributed, time-coded slice of a call transcript.
+- name: CoachingScore
+  surface: graphql
+  confirmed: true
+  description: A scored coaching dimension attached to a recording.
+- name: User
+  surface: rest
+  confirmed: false
+  description: >-
+    Platform user. Addressed at services/data/v2.0/mtobjects/User/{userid}; no
+    field-level contract is published.
+- name: Group
+  surface: rest
+  confirmed: false
+  description: >-
+    User group. Addressed at services/data/v2.0/mtobjects/Group/{groupid}; no
+    field-level contract is published.
+- name: Module
+  surface: rest
+  confirmed: false
+  description: Training module. Named in the platform docs; no public contract.
+- name: Program
+  surface: rest
+  confirmed: false
+  description: Readiness program grouping modules and assigned users. No public contract.
+- name: DigitalSalesRoom
+  surface: oauth-scope
+  confirmed: false
+  description: >-
+    Buyer-facing sales room. Its existence as an API resource is evidenced only
+    by the read:rooms / write:rooms OAuth scopes; no query or endpoint is public.
+- name: AiRoleplay
+  surface: oauth-scope
+  confirmed: false
+  description: >-
+    AI role play simulation. Evidenced by read:ai_roleplays / write:ai_roleplays
+    scopes only.
+
+relationships:
+- from: RecordingConnection
+  to: Recording
+  type: has_many
+  via: edges[].node
+  confidence: high
+- from: Recording
+  to: Participant
+  type: has_many
+  via: participants
+  confidence: high
+- from: Recording
+  to: TranscriptSegment
+  type: has_many
+  via: transcript
+  confidence: high
+- from: Recording
+  to: CoachingScore
+  type: has_many
+  via: coachingScores
+  confidence: high
+- from: TranscriptSegment
+  to: Participant
+  type: belongs_to
+  via: speakerId
+  confidence: medium
+  note: Inferred from the speakerId/speakerName field pair; not stated in the docs.
+- from: Group
+  to: User
+  type: has_many
+  via: group membership
+  confidence: low
+  note: >-
+    Implied by the mtobjects Group/User pair in the REST path scheme. No public
+    contract states the linking field.
+
+identifiers:
+  style: opaque
+  prefixed: false
+  note: >-
+    No documented id prefixes or id format. Cursors on the GraphQL connection
+    are opaque strings.
+
+gaps:
+- No object reference for the REST mtobjects domain.
+- No JSON Schema or OpenAPI components to derive field types from.
+- The digital-sales-room and AI-roleplay resources are visible only as OAuth scope strings.

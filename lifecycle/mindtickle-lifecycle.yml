@@ -1,0 +1,88 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.mindtickle.com/service-level-agreement/
+name: Mindtickle API lifecycle, SLA and status
+description: >-
+  Mindtickle publishes a customer-facing Service Level Agreement with a 99.9%
+  monthly uptime commitment, a service-credit schedule, an RTO of 12 hours and
+  an RPO of 1 hour, plus an Atlassian Statuspage with a machine-readable
+  summary endpoint. It publishes no API versioning policy, no deprecation
+  policy, and no changelog or release-notes page reachable from the public site.
+
+versioning:
+  scheme: uri-path
+  current: v2.0
+  evidence: >-
+    REST resource paths carry a version segment - services/data/v2.0/mtobjects/...
+    - so the API is URI-path versioned in practice. Mindtickle publishes no
+    versioning policy document stating support windows or how versions retire.
+  docs: null
+  policy_published: false
+
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  note: >-
+    No deprecation or sunset policy is published on any public Mindtickle page,
+    and RFC 8594 Sunset/Deprecation header support could not be observed because
+    every api.mindtickle.com path returns 400 without credentials. Recorded as
+    absent, not as false - this is a gap the provider can close with one page.
+
+sla:
+  url: https://www.mindtickle.com/service-level-agreement/
+  alias_url: https://www.mindtickle.com/sla/
+  uptime_target: '99.9%'
+  measurement_window: calendar month
+  scope: >-
+    Applies per Agreement (per account), not per user. "Unavailable" means all
+    Mindtickle applications - admin site, learning site, mobile apps - have no
+    external connectivity for all of a customer's users.
+  rto_hours: 12
+  rpo_hours: 1
+  service_credits:
+  - uptime_range: 99.1% to 99.8%
+    credit: '1%'
+  - uptime_range: 95.1% to 99.0%
+    credit: '10%'
+  - uptime_range: 90.1% to 95.0%
+    credit: '20%'
+  - uptime_range: less than 90.0%
+    credit: '30%'
+  claim_window_days: 60
+  minimum_credit_usd: 100
+  claim_contact: [help@mindtickle.com, support@mindtickle.com]
+
+status_page: https://status.mindtickle.com/
+status_page_details:
+  provider: Atlassian Statuspage
+  page_id: h6plrmmlt7nh
+  machine_readable: https://status.mindtickle.com/api/v2/summary.json
+  api_status: 200
+  uptime_history: https://status.mindtickle.com/uptime
+  note: >-
+    The Statuspage REST API (v2) is served anonymously - summary.json, status.json,
+    components.json, incidents.json and scheduled-maintenances.json - which makes
+    Mindtickle's operational state machine-readable even though its API contract
+    is not.
+
+changelog:
+  published: false
+  note: >-
+    /changelog/, /release-notes/, /whats-new/ and /product-updates/ all return
+    the site's soft-404 page. Product release notes live in help.mindtickle.com,
+    which 302s to an admin-console login.
+
+deprecated_operations: []
+
+evidence:
+- url: https://www.mindtickle.com/service-level-agreement/
+  status: 200
+- url: https://status.mindtickle.com/
+  status: 200
+- url: https://status.mindtickle.com/api/v2/summary.json
+  status: 200
+- url: https://www.mindtickle.com/changelog/
+  status: 200
+  note: soft-404, title "Mindtickle | 404"

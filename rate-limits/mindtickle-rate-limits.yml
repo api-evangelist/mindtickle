@@ -1,3 +1,18 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.mindtickle.com/platform/integrations/
+limit_count: 2
+response_headers:
+  documented: false
+  x_ratelimit: null
+  ratelimit: null
+  retry_after: null
+  note: >-
+    Mindtickle publishes the limit numbers but documents no rate-limit response
+    headers, so a client cannot read its remaining budget at runtime - only
+    react to a 429 after the fact. Headers could not be observed live because
+    api.mindtickle.com returns 400 to every anonymous request.
+exhaustion_status: 429
 name: Mindtickle API Rate Limits
 description: Mindtickle enforces rate limits on its REST API on a per-account basis. Exceeding limits results in HTTP 429 responses.
 url: https://www.mindtickle.com/platform/integrations/

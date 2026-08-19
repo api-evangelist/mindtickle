@@ -1,0 +1,166 @@
+generated: '2026-08-14'
+method: probed
+source: live GET of /.well-known/* on every Mindtickle host named in apis.yml
+name: Mindtickle well-known discovery surface
+description: >-
+  Probe of the RFC 8615 /.well-known/ surface across every Mindtickle host. The
+  marketing host www.mindtickle.com is a Next.js site that answers HTTP 200 with
+  its own 404 HTML page for every unknown path, so every 200 recorded there is a
+  soft-404 and is scored as a MISS, not a document. The only real documents are
+  served by the application host app.mindtickle.com, which publishes an RFC 8414
+  OAuth 2.0 authorization-server metadata document and an RFC 9728 OAuth
+  protected-resource metadata document anonymously.
+
+hosts:
+- host: https://app.mindtickle.com
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    spec: RFC 8414
+    status: 200
+    content_type: application/json
+    real_document: true
+    file: mindtickle-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource
+    spec: RFC 9728
+    status: 200
+    content_type: application/json
+    real_document: true
+    file: mindtickle-oauth-protected-resource.json
+  - path: /.well-known/jwks.json
+    spec: RFC 7517
+    status: 200
+    real_document: true
+    file: null
+    note: >-
+      JWKS is served and reachable anonymously; not archived here because key
+      material rotates and a stale copy is worse than none.
+  - path: /.well-known/security.txt
+    status: 404
+    real_document: false
+  - path: /.well-known/openid-configuration
+    status: 404
+    real_document: false
+  - path: /.well-known/api-catalog
+    status: 404
+    real_document: false
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    real_document: false
+  - path: /.well-known/agent-card.json
+    status: 404
+    real_document: false
+  - path: /.well-known/agent.json
+    status: 404
+    real_document: false
+  - path: /.well-known/mcp.json
+    status: 404
+    real_document: false
+
+- host: https://www.mindtickle.com
+  note: >-
+    Soft-404 host. Every /.well-known/* path returns HTTP 200 with the site's
+    404 HTML page (129,723 bytes, content-type text/html, <title>Mindtickle</title>).
+    None of these are documents; all are recorded as misses.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: soft-404 HTML shell
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: soft-404 HTML shell
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: soft-404 HTML shell
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: soft-404 HTML shell
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: soft-404 HTML shell
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: soft-404 HTML shell
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: soft-404 HTML shell - rejected, no AgentCard artifact written
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: soft-404 HTML shell - rejected, no AgentCard artifact written
+
+- host: https://api.mindtickle.com
+  note: >-
+    Returns HTTP 400 with a "Not Found" HTML body for every path probed
+    anonymously, including /.well-known/*. Nothing served.
+  documents:
+  - path: /.well-known/security.txt
+    status: 400
+    real_document: false
+  - path: /.well-known/openid-configuration
+    status: 400
+    real_document: false
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+    real_document: false
+  - path: /.well-known/api-catalog
+    status: 400
+    real_document: false
+  - path: /.well-known/ai-plugin.json
+    status: 400
+    real_document: false
+
+- host: https://admin.mindtickle.com
+  note: >-
+    Answers HTTP 200 for /.well-known/* with the admin-console login-redirect
+    HTML page, not a document. All recorded as misses.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: login-redirect HTML shell
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: login-redirect HTML shell
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    real_document: false
+    note: login-redirect HTML shell
+
+- host: https://developer.mindtickle.com
+  note: Host resolves; every /.well-known/* path returns 404.
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 404
+    real_document: false
+  - path: /.well-known/agent.json
+    status: 404
+    real_document: false
+
+summary:
+  documents_served: 3
+  hosts_probed: 5
+  security_txt: false
+  agent_card: false
+  api_catalog: false
+  openid_configuration: false
+  oauth_authorization_server: true
+  oauth_protected_resource: true

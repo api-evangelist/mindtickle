@@ -1,0 +1,102 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  npm registry search + registry metadata endpoints, PyPI, RubyGems, crates.io,
+  and the github.com/MindTickle organisation
+name: Mindtickle client libraries and packages
+description: >-
+  Mindtickle publishes NO first-party API client library in any public package
+  registry. The only package published under the org-owned @mindtickle npm scope
+  is a dashboard plugin, not an API SDK, and it has never left beta. The
+  github.com/MindTickle organisation holds 39 public repositories and every one
+  of them is a fork of an unrelated upstream project (Kafka, jsonparser, RxSwift,
+  kiam, apollo-kotlin, ...) - there is no first-party SDK, CLI or spec repo.
+  Third-party packages that wrap Mindtickle exist and are listed below with
+  official: false.
+
+packages:
+- language: javascript
+  registry: npm
+  name: '@mindtickle/dashboard-plugin'
+  url: https://www.npmjs.com/package/@mindtickle/dashboard-plugin
+  install: npm install @mindtickle/dashboard-plugin
+  official: true
+  kind: ui-plugin
+  api_client: false
+  version: 1.0.0-beta.6
+  published: '2023-12-18'
+  latest_dist_tag: 1.0.0-beta.1
+  latest_dist_tag_published: '2021-11-11'
+  repository: https://gitlab.com/mindtickle/scoped-package-dashboard-plugin
+  note: >-
+    Published by the npm user "mindtickle" under the org-owned @mindtickle scope,
+    so first-party. It is a dashboard plugin, NOT an API client - it has no
+    README ("ERROR: No README data found!"), no description, and its source repo
+    is a private GitLab URL. The `latest` dist-tag still points at
+    1.0.0-beta.1 from 2021-11-11 while the newest build is 1.0.0-beta.6 from
+    2023-12-18; nothing has shipped in over two and a half years. Because it is
+    not an API client library, no SDKs pointer is emitted for it in apis.yml.
+
+- language: javascript
+  registry: npm
+  name: '@intentsolutionsio/mindtickle-pack'
+  url: https://www.npmjs.com/package/@intentsolutionsio/mindtickle-pack
+  install: npm install @intentsolutionsio/mindtickle-pack
+  official: false
+  publisher: intentsolutionsio
+  kind: agent-skill-pack
+  api_client: false
+  version: 1.0.3
+  published: '2026-06-08'
+  description: Claude Code skill pack for Mindtickle - 18 skills covering sales readiness, training, and revenue enablement
+  note: Third-party. Not endorsed by or affiliated with Mindtickle as far as the registry metadata shows.
+
+- language: javascript
+  registry: npm
+  name: '@intentsolutionsio/mindtickle-skill-md-pack'
+  url: https://www.npmjs.com/package/@intentsolutionsio/mindtickle-skill-md-pack
+  install: npm install @intentsolutionsio/mindtickle-skill-md-pack
+  official: false
+  publisher: intentsolutionsio
+  kind: agent-skill-pack
+  api_client: false
+  version: 0.0.1
+  published: '2025-12-30'
+  description: Claude Code skill pack for mindtickle - Coming Soon
+  note: Third-party placeholder release.
+
+registries_checked:
+- registry: npm
+  query: mindtickle
+  status: 200
+  first_party_api_client: false
+  note: 7 matches; only the @mindtickle scope is first-party and it holds a UI plugin.
+- registry: pypi
+  url: https://pypi.org/pypi/mindtickle/json
+  status: 404
+- registry: rubygems
+  url: https://rubygems.org/api/v1/gems/mindtickle.json
+  status: 404
+- registry: crates.io
+  url: https://crates.io/api/v1/crates/mindtickle
+  status: 403
+  note: crates.io rejected the unauthenticated probe; no Rust crate is expected or claimed either way.
+- registry: github
+  url: https://api.github.com/orgs/MindTickle/repos
+  status: 200
+  first_party_api_client: false
+  note: 39 public repos, all forks of unrelated upstream projects; newest activity 2024-08-06.
+- registry: github
+  url: https://api.github.com/users/mindtickle-api
+  status: 200
+  note: Account exists but has 0 public repositories.
+
+summary:
+  official_api_clients: 0
+  official_packages: 1
+  third_party_packages: 2
+  sdk_pointer_emitted: false
+  finding: >-
+    A platform that ships a REST API and a public GraphQL API but no client
+    library in any language, and whose only first-party npm artifact has been
+    stuck in beta since 2021, is asking every integrator to hand-roll HTTP.

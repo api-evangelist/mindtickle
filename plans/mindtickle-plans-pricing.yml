@@ -1,3 +1,14 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.mindtickle.com/platform/
+plan_count: 4
+self_serve: false
+public_price_list: false
+notes_on_method: >-
+  Mindtickle publishes no pricing page and no price list. Every tier below is a
+  named, separately-licensed module read from the platform and product pages;
+  the price for each is "contact sales". plan_count counts licensable modules,
+  not published prices - the published-price count is zero.
 name: Mindtickle Plans and Pricing
 description: Mindtickle uses custom enterprise pricing based on the number of licensed users, contract term length, and specific modules included. No self-serve tiers are publicly listed; pricing is disclosed during the sales process.
 url: https://www.mindtickle.com/platform/

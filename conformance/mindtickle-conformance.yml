@@ -1,0 +1,172 @@
+generated: '2026-08-14'
+method: searched
+source: https://app.mindtickle.com/.well-known/oauth-authorization-server
+name: Mindtickle standards conformance
+description: >-
+  Cross-cutting standards Mindtickle demonstrably implements, evidenced from its
+  own anonymously-served discovery documents and its published trust and
+  compliance pages. Anything not evidenced is recorded as false or unknown
+  rather than assumed.
+
+standards:
+- id: oauth2
+  spec: RFC 6749
+  conforms: true
+  evidence: >-
+    Full authorization server at app.mindtickle.com with authorize/token/revoke/
+    introspect endpoints; grant types authorization_code, refresh_token,
+    client_credentials.
+- id: oauth2-authorization-server-metadata
+  spec: RFC 8414
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 application/json on app.mindtickle.com
+- id: oauth2-protected-resource-metadata
+  spec: RFC 9728
+  conforms: true
+  evidence: /.well-known/oauth-protected-resource returns 200 application/json on app.mindtickle.com
+- id: oauth2-pkce
+  spec: RFC 7636
+  conforms: true
+  evidence: code_challenge_methods_supported = [S256]
+- id: oauth2-dynamic-client-registration
+  spec: RFC 7591
+  conforms: true
+  evidence: registration_endpoint = https://app.mindtickle.com/api/users/v1/oauth/register
+- id: oauth2-pushed-authorization-requests
+  spec: RFC 9126
+  conforms: true
+  evidence: pushed_authorization_request_endpoint advertised
+- id: oauth2-device-authorization-grant
+  spec: RFC 8628
+  conforms: true
+  evidence: device_authorization_endpoint advertised
+- id: oauth2-token-introspection
+  spec: RFC 7662
+  conforms: true
+  evidence: introspection_endpoint advertised with client_secret_post/basic auth
+- id: oauth2-token-revocation
+  spec: RFC 7009
+  conforms: true
+  evidence: revocation_endpoint advertised
+- id: private-key-jwt-client-auth
+  spec: RFC 7523
+  conforms: true
+  evidence: token_endpoint_auth_methods_supported includes private_key_jwt
+- id: jwt
+  spec: RFC 7519
+  conforms: true
+  evidence: REST API authenticates with a JWT bearer token; jwks_uri published
+- id: jwks
+  spec: RFC 7517
+  conforms: true
+  evidence: https://app.mindtickle.com/.well-known/jwks.json returns 200
+- id: graphql
+  spec: GraphQL June 2018+
+  conforms: true
+  evidence: >-
+    Call AI public API is GraphQL with a documented recordingsV2 query, cursor
+    pagination and an in-browser playground; endpoint published at
+    https://api-gateway.callai.www.mindtickle.com/public/graphapi
+- id: graphql-cursor-connections
+  spec: Relay Cursor Connections
+  conforms: true
+  evidence: >-
+    recordingsV2 takes first/after and returns edges + pageInfo, the Relay
+    connection shape.
+- id: scim
+  spec: SCIM 2.0
+  conforms: true
+  evidence: >-
+    Mindtickle documents SCIM-based user provisioning as a platform capability
+    on its integrations page. The SCIM endpoint contract itself is not public.
+- id: saml2
+  spec: SAML 2.0
+  conforms: true
+  evidence: Platform SSO supports SAML, OpenID Connect and JWT
+- id: llms-txt
+  spec: llms.txt
+  conforms: true
+  evidence: https://www.mindtickle.com/llms.txt returns 200 text/plain, 13,917 bytes
+- id: statuspage-api-v2
+  spec: Atlassian Statuspage API v2
+  conforms: true
+  evidence: https://status.mindtickle.com/api/v2/summary.json returns 200
+- id: openid-connect-discovery
+  spec: OpenID Connect Discovery 1.0
+  conforms: false
+  evidence: >-
+    No /.well-known/openid-configuration on any host (404 on app, 400 on api,
+    soft-404 HTML on www and admin). OIDC is offered as a platform SSO option
+    but no discovery document is published.
+- id: openapi
+  spec: OpenAPI 3.x
+  conforms: false
+  evidence: >-
+    No OpenAPI or Swagger document found on api.mindtickle.com, app.mindtickle.com,
+    www.mindtickle.com, developer.mindtickle.com or docs.mindtickle.com.
+- id: rfc9457-problem-details
+  spec: RFC 9457
+  conforms: false
+  evidence: >-
+    Errors observed anonymously are text/plain or bare JSON ({"message": ...,
+    "request_id": ...}), not application/problem+json.
+- id: rfc9116-security-txt
+  spec: RFC 9116
+  conforms: false
+  evidence: No security.txt served on any host; disclosure policy is an HTML page only.
+- id: rfc8594-sunset-header
+  spec: RFC 8594
+  conforms: unknown
+  evidence: Could not be observed - api.mindtickle.com returns 400 to every anonymous request.
+- id: a2a-agent-card
+  spec: A2A 1.0.0
+  conforms: false
+  evidence: >-
+    No agent card at /.well-known/agent-card.json or /.well-known/agent.json on
+    any host. The 200s on www.mindtickle.com are the site's soft-404 HTML page.
+- id: mcp
+  spec: Model Context Protocol
+  conforms: false
+  evidence: >-
+    No MCP endpoint found. /mcp, /mcp/message, /api/mcp, /api/v1/mcp, /sse and
+    /copilot/mcp on app.mindtickle.com all return the same generic
+    "learner not authenticated" 401 that a deliberately nonsense path returns,
+    with no WWW-Authenticate challenge.
+
+compliance:
+  published: true
+  url: https://www.mindtickle.com/compliance/
+  trust_center: https://trust.mindtickle.com/
+  certifications:
+  - SOC 2
+  - SOC 3
+  - ISO 27001:2022
+  - ISO 27017:2015
+  - ISO 27018:2019
+  - ISO 27701:2019
+  - ISO 22301:2019
+  - ISO 42001:2023
+  - CSA STAR Level 1
+  regulatory:
+  - GDPR
+  - CCPA
+  - UK DPA 2018
+  - EU-US/UK/Swiss Data Privacy Framework
+  - EU Standard Contractual Clauses
+  - UK IDTA
+  - APEC PRP
+  - HIPAA
+  - EU AI Act
+  evidence:
+  - url: https://www.mindtickle.com/compliance/
+    status: 200
+  - url: https://www.mindtickle.com/trust/
+    status: 200
+  - url: https://trust.mindtickle.com/
+    status: 200
+    note: >-
+      Returns 403 to a default curl user-agent and 200 to a browser-shaped one;
+      the 200 body is the Trust Center document listing SOC 2 and ISO 27001.
+  - url: https://www.dataprivacyframework.gov/participant/6104
+    status: 200
+    note: Third-party registry confirming the DPF certification Mindtickle claims.

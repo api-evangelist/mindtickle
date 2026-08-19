@@ -1,0 +1,97 @@
+generated: '2026-08-14'
+method: probed
+source: https://app.mindtickle.com/.well-known/oauth-protected-resource
+name: Mindtickle OAuth 2.0 scopes
+description: >-
+  Mindtickle publishes its OAuth 2.0 scope vocabulary anonymously in two places:
+  scopes_supported in the RFC 8414 authorization-server metadata and
+  scopes_supported in the RFC 9728 protected-resource metadata. Both lists are
+  identical - seven scopes covering AI roleplays, call recordings, Copilot chat,
+  digital sales rooms and search. Descriptions below are DERIVED from the scope
+  name plus the matching product surface in Mindtickle's own product pages; the
+  provider publishes no prose scope reference, so the strings themselves are the
+  only authoritative part.
+docs: null
+
+schemes:
+- name: mindtickleOAuth2
+  source: well-known/mindtickle-oauth-authorization-server.json
+  issuer: https://app.mindtickle.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.mindtickle.com/api/users/v1/oauth/authorize
+    tokenUrl: https://app.mindtickle.com/api/users/v1/oauth/token
+  - flow: clientCredentials
+    tokenUrl: https://app.mindtickle.com/api/users/v1/oauth/token
+
+scopes:
+- scope: read:ai_roleplays
+  access: read
+  resource: AI Sales Role Play
+  description: >-
+    Read access to AI role play simulations and their results. Derived label -
+    Mindtickle publishes no scope reference page.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/mindtickle-oauth-authorization-server.json, well-known/mindtickle-oauth-protected-resource.json]
+- scope: write:ai_roleplays
+  access: write
+  resource: AI Sales Role Play
+  description: >-
+    Create or modify AI role play simulations. Derived label.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/mindtickle-oauth-authorization-server.json, well-known/mindtickle-oauth-protected-resource.json]
+- scope: read:calls
+  access: read
+  resource: Call AI / Conversation Intelligence
+  description: >-
+    Read access to call recordings, transcripts and conversation-intelligence
+    data - the same domain the Call AI public GraphQL API exposes. Derived label.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/mindtickle-oauth-authorization-server.json, well-known/mindtickle-oauth-protected-resource.json]
+- scope: read:copilot_chat
+  access: read
+  resource: Copilot
+  description: >-
+    Read access to Mindtickle Copilot chat. Derived label.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/mindtickle-oauth-authorization-server.json, well-known/mindtickle-oauth-protected-resource.json]
+- scope: read:rooms
+  access: read
+  resource: Digital Sales Room
+  description: >-
+    Read access to digital sales rooms and their buyer-engagement data. Derived label.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/mindtickle-oauth-authorization-server.json, well-known/mindtickle-oauth-protected-resource.json]
+- scope: write:rooms
+  access: write
+  resource: Digital Sales Room
+  description: >-
+    Create or modify digital sales rooms. Derived label.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/mindtickle-oauth-authorization-server.json, well-known/mindtickle-oauth-protected-resource.json]
+- scope: read:search
+  access: read
+  resource: Platform search
+  description: >-
+    Read access to platform-wide search across content and readiness objects.
+    Derived label.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/mindtickle-oauth-authorization-server.json, well-known/mindtickle-oauth-protected-resource.json]
+
+summary:
+  scope_count: 7
+  read_scopes: 5
+  write_scopes: 2
+  granularity: resource-and-verb
+  notes:
+  - >-
+    The scope vocabulary is shaped like an agent/assistant surface (roleplays,
+    Copilot chat, calls, rooms, search) rather than like the admin REST API
+    (users, groups, modules, reporting). No MCP endpoint was found on any host -
+    every /mcp, /api/mcp, /sse and /copilot/mcp path returns the same generic
+    "learner not authenticated" 401 that a nonsense path returns, so no MCP
+    server is claimed.
+  - >-
+    Mindtickle publishes no human-readable scope reference. The strings are
+    authoritative; the descriptions here are derived and should be replaced if
+    the provider publishes a permissions page.

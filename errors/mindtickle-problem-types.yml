@@ -1,0 +1,62 @@
+generated: '2026-08-14'
+method: derived
+source: >-
+  rate-limits/mindtickle-rate-limits.yml, live anonymous responses from
+  api.mindtickle.com and app.mindtickle.com
+name: Mindtickle error catalog
+description: >-
+  Mindtickle publishes no error reference, no error-code registry and no error
+  schema. This catalog is derived from the three statuses the provider documents
+  alongside its rate limits, plus the error bodies observed on live anonymous
+  requests. It is deliberately short - a longer one would be invented.
+format: proprietary
+problem_json: false
+
+envelope:
+  documented: false
+  observed_shapes:
+  - content_type: text/plain
+    example_body: learner not authenticated
+    seen_on: app.mindtickle.com (401 on every unauthenticated path)
+  - content_type: application/json
+    fields: [message, request_id]
+    example_body: '{"message":"no Route matched with those values","request_id":"..."}'
+    seen_on: app.mindtickle.com gateway (404 for unrouted paths)
+  - content_type: text/html
+    seen_on: api.mindtickle.com (400 "Not Found" HTML for every anonymous request)
+  correlation_header: x-request-id
+
+problems:
+- status: 401
+  title: Not authenticated
+  detail: Missing or malformed JWT, or incorrect Secret Key.
+  remediation: >-
+    Regenerate credentials in the Mindtickle admin console under
+    Settings > API Access and re-sign the JWT.
+  source: rate-limits/mindtickle-rate-limits.yml
+- status: 403
+  title: Token expired
+  detail: >-
+    JWT validity is capped at one hour; a token older than that is rejected.
+  remediation: Generate a new JWT before making subsequent requests.
+  source: rate-limits/mindtickle-rate-limits.yml
+- status: 429
+  title: Rate limit exceeded
+  detail: >-
+    Account-level rate limit exceeded (4 requests/second, 60 requests/minute).
+  remediation: Implement exponential backoff and retry.
+  retry_after_header: undocumented
+  source: rate-limits/mindtickle-rate-limits.yml
+- status: 400
+  title: Bad request / not found
+  detail: >-
+    api.mindtickle.com returns HTTP 400 with a "Not Found" HTML body for any
+    path it does not route, including anonymous discovery probes. Observed, not
+    documented.
+  source: live probe of https://api.mindtickle.com/ on 2026-08-14
+
+gaps:
+- No published error-code registry or per-endpoint error reference.
+- No application/problem+json (RFC 9457) support.
+- No documented Retry-After or RateLimit-* headers on 429.
+- Error bodies are inconsistent across hosts - text/plain, JSON and HTML all appear.
