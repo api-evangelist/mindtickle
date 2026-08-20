@@ -42,6 +42,12 @@ apis:
   humanURL: https://www.mindtickle.com/platform/integrations/
   baseURL: https://api.mindtickle.com
   tags:
+  - User
+  - Group
+  - Modules
+  - Reporting
+  - Analytics
+  tags_raw:
   - Users
   - Groups
   - Modules
@@ -60,6 +66,12 @@ apis:
   humanURL: https://www.mindtickle.com/call-ai-public-api-mindtickle/
   baseURL: https://api-gateway.callai.www.mindtickle.com/public/graphapi
   tags:
+  - Call Intelligence
+  - Recordings
+  - Coaching
+  - GraphQL
+  - Authentication
+  tags_raw:
   - Call Intelligence
   - Recordings
   - Coaching
