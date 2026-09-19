@@ -78,7 +78,7 @@ apis:
   baseURL: https://api-gateway.callai.www.mindtickle.com/public/graphapi
   tags:
   - Call Intelligence
-  - Recordings
+  - Recording
   - Coaching
   - GraphQL
   - Authentication
