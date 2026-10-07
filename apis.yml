@@ -98,6 +98,8 @@ apis:
   - url: graphql/mindtickle-schema.graphql
     type: GraphQLSchema
 common:
+- type: Pricing
+  url: https://www.mindtickle.com/platform/
 - type: TrustCenter
   url: security/mindtickle-trust-center.yml
 - type: DomainSecurity
