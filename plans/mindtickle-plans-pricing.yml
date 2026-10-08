@@ -59,3 +59,39 @@ notes:
   - Volume-based discounts are available.
   - No hidden fees; pricing is disclosed upfront during the sales process.
   - 24/7 support included; premium support packages available.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  units:
+  - seat
+  plans:
+  - name: Revenue Enablement Platform
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units:
+    - seat
+    periods: []
+  - name: Call AI Add-on
+    access: addon
+    model: negotiated
+    model_how: derived
+    units:
+    - seat
+    periods: []
+  - name: Digital Sales Rooms Add-on
+    access: addon
+    model: negotiated
+    model_how: derived
+    units:
+    - seat
+    periods: []
+  - name: Revenue Intelligence Add-on
+    access: addon
+    model: negotiated
+    model_how: derived
+    units:
+    - seat
+    periods: []
