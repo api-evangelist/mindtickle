@@ -1,0 +1,77 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/mindtickle-openapi-generated.yml
+vocabulary:
+  name: Mindtickle Domain Vocabulary
+  description: 'Terms declared by Mindtickle''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-13'
+  terms:
+  - term: PostApiAssethubV2AssetsAsyncRequest
+    definition: 'Object declared by the contract with fields: assets, user_id, assets[].file_id, assets[].hubs, assets[].properties, assets[].properties.name,
+      assets[].properties.description, assets[].properties.status, assets[].properties.asset_owner, assets[].properties.allow_download, assets[].properties.usage,
+      assets[].properties.allow_mix_and_match. (6 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostApiAssethubV2AssetsAsyncRequest
+  - term: PostApiAssethubV2AssetsAsyncResponse
+    definition: 'Object declared by the contract with fields: execution_id, request_id, message.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostApiAssethubV2AssetsAsyncResponse
+  - term: GetApiAssethubV2AssetsAsyncExecutionidResponse
+    definition: 'Object declared by the contract with fields: execution_id, status, total_tasks, completed_tasks, failed_tasks, tasks, request_id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/GetApiAssethubV2AssetsAsyncExecutionidResponse
+  - term: PostApiAssethubV2HubRequest
+    definition: 'Object declared by the contract with fields: hub_name, access_type, description, user_id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostApiAssethubV2HubRequest
+  - term: PostApiAssethubV2HubResponse
+    definition: 'Object declared by the contract with fields: hub_id, hub_name, access_type, description, request_id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostApiAssethubV2HubResponse
+  - term: PostApiAssethubV2HubHubidUsersManageRequest
+    definition: 'Object declared by the contract with fields: user_id, user_details, user_details[].user_id, user_details[].username, user_details[].action.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostApiAssethubV2HubHubidUsersManageRequest
+  - term: PostApiAssethubV2HubHubidUsersManageResponse
+    definition: 'Object declared by the contract with fields: request_id, hub_id, status, success, failed.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostApiAssethubV2HubHubidUsersManageResponse
+  - term: PostPublicGraphapiRequest
+    definition: 'Object declared by the contract with fields: query, variables.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostPublicGraphapiRequest
+  - term: PostPublicGraphapiResponse
+    definition: 'Object declared by the contract with fields: line, column.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostPublicGraphapiResponse
+  - term: PutReportsReportidAnnualPdfResponse
+    definition: 'Object declared by the contract with fields: request_meta, entities.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PutReportsReportidAnnualPdfResponse
+  - term: GetServicesDataV10ContentUploadUrlResponse
+    definition: 'Object declared by the contract with fields: request_meta, entities.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/GetServicesDataV10ContentUploadUrlResponse
+  - term: PostServicesDataV10ContentContentidRequest
+    definition: 'Object declared by the contract with fields: source_name, root_folder_name.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostServicesDataV10ContentContentidRequest
+  - term: PostServicesDataV10ContentContentidResponse
+    definition: 'Object declared by the contract with fields: request_meta, entities.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostServicesDataV10ContentContentidResponse

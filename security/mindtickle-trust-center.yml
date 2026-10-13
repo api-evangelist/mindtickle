@@ -1,4 +1,4 @@
-generated: '2026-08-14'
+generated: '2026-10-12'
 method: searched
 probe: true
 source: https://trust.mindtickle.com/
@@ -10,7 +10,6 @@ certifications:
 - ISO 27018
 - HIPAA
 - GDPR
-- CSA STAR
 evidence:
 - source: https://trust.mindtickle.com/
   keywords:
@@ -19,4 +18,3 @@ evidence:
   - hipaa
   - trust center
   - gdpr
-  - csa star

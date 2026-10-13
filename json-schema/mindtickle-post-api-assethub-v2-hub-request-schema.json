@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/mindtickle/main/json-schema/mindtickle-post-api-assethub-v2-hub-request-schema.json",
+  "title": "PostApiAssethubV2HubRequest",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostApiAssethubV2HubRequest",
+  "type": "object",
+  "properties": {
+    "hub_name": {
+      "type": "string",
+      "description": "Name of the hub. Maximum 50 characters. Cannot contain / , \\ , or ."
+    },
+    "access_type": {
+      "type": "string",
+      "description": "Hub access setting. HUB_ACCESS_PUBLIC or HUB_ACCESS_RESTRICTED."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the hub. Maximum 1,000 characters, excluding HTML tags."
+    },
+    "user_id": {
+      "type": "string",
+      "description": "ID of the user performing the operation. Must have the HUB_MANAGEMENT permission."
+    }
+  },
+  "required": [
+    "hub_name",
+    "access_type",
+    "user_id"
+  ]
+}

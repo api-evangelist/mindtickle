@@ -1,0 +1,633 @@
+openapi: 3.1.0
+info:
+  title: Mindtickle API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 10 operation(s) read from 9 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Mindtickle has published no machine-readable contract that the
+    pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 6
+    pages-with-code: 2
+    pages-read: 9
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.mindtickle.com/docs/call-ai/graphql-api
+  - https://developer.mindtickle.com/docs/call-ai/graphql-api/query-call-data
+  - https://developer.mindtickle.com/docs/call-ai/graphql-api/download-call-recordings
+  - https://developer.mindtickle.com/docs/asset-hub/hubs/manage-user-access-for-restricted-hubs
+  - https://developer.mindtickle.com/docs/content-center
+  - https://developer.mindtickle.com/docs/getting-started
+  - https://developer.mindtickle.com/docs/getting-started.md
+  - https://developer.mindtickle.com/docs/asset-hub/hubs/create-a-hub
+  - https://developer.mindtickle.com/docs/asset-hub/assets/create-assets
+servers:
+- url: https://api.mindtickle.com
+paths:
+  /api/assethub/v2/assets/async:
+    post:
+      operationId: post_api_assethub_v2_assets_async
+      tags:
+      - Api
+      summary: Create assets
+      x-source: https://developer.mindtickle.com/docs/asset-hub/assets/create-assets
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer ACCESS_TOKEN
+      - name: Content-Type
+        in: header
+        required: true
+        schema:
+          type: string
+        description: application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiAssethubV2AssetsAsyncRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiAssethubV2AssetsAsyncResponse'
+      x-evidence:
+        kind: documentation
+  /api/assethub/v2/assets/async/{executionId}:
+    get:
+      operationId: get_api_assethub_v2_assets_async_executionId
+      tags:
+      - Api
+      summary: Check status
+      x-source: https://developer.mindtickle.com/docs/asset-hub/assets/create-assets
+      parameters:
+      - name: executionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer ACCESS_TOKEN
+      - name: user_id
+        in: query
+        required: true
+        schema:
+          type: string
+        description: User ID for authorization. Must be a valid user ID.
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: 'Maximum number of tasks to return. Maximum 100. Default: 0.'
+      - name: skip
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: 'Number of tasks to skip. Default: 0.'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiAssethubV2AssetsAsyncExecutionidResponse'
+      x-evidence:
+        kind: documentation
+  /api/assethub/v2/hub:
+    post:
+      operationId: post_api_assethub_v2_hub
+      tags:
+      - Api
+      summary: Create a hub
+      description: Creates an Asset Hub hub with a name, an access type, and an optional description.
+      x-source: https://developer.mindtickle.com/docs/asset-hub/hubs/create-a-hub
+      parameters:
+      - name: hub_name
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Name of the hub. Maximum 50 characters. Cannot contain / , \ , or .
+      - name: access_type
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Hub access setting. HUB_ACCESS_PUBLIC or HUB_ACCESS_RESTRICTED.
+      - name: description
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Description of the hub. Maximum 1,000 characters, excluding HTML tags.
+      - name: user_id
+        in: query
+        required: true
+        schema:
+          type: string
+        description: ID of the user performing the operation. Must have the HUB_MANAGEMENT permission.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiAssethubV2HubRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiAssethubV2HubResponse'
+      x-evidence:
+        kind: documentation
+  /api/assethub/v2/hub/{hubId}/users/manage:
+    post:
+      operationId: post_api_assethub_v2_hub_hubId_users_manage
+      tags:
+      - Api
+      summary: Shares or revokes access to a restricted hub for individual users in a single request.
+      description: Shares or revokes access to a restricted hub for individual users in a single request.
+      x-source: https://developer.mindtickle.com/docs/asset-hub/hubs/manage-user-access-for-restricted-hubs
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiAssethubV2HubHubidUsersManageRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiAssethubV2HubHubidUsersManageResponse'
+      x-evidence:
+        kind: documentation
+  /public/graphapi:
+    post:
+      operationId: post_public_graphapi
+      tags:
+      - Public
+      summary: POST /public/graphapi
+      x-source: https://developer.mindtickle.com/docs/call-ai/graphql-api
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPublicGraphapiRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPublicGraphapiResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --location ''https://api-gateway.callai.mindtickle.com/public/graphapi'' \ --header ''Content-Type: application/json''
+          \ --header ''Authorization: Bearer ACCESS_TOKEN'' \ --data ''{"query":"query {\n recordingsV2(\n first: 1,\n after: \"0\",\n filters:
+          {\n categoryId: \"1\"\n }\n sort: {\n sortType: \"start_date\",\n sortOrder: asc\n }\n )\n {\n edges {\n node {\n id\n mediaUrls {\n
+          streamingSource\'
+  /reports/{reportid}/annual.pdf:
+    put:
+      operationId: put_reports_reportid_annual_pdf
+      tags:
+      - Reports
+      summary: PUT /reports/{reportId}/annual.pdf
+      x-source: https://developer.mindtickle.com/docs/content-center
+      parameters:
+      - name: reportid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutReportsReportidAnnualPdfResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location --request PUT 'PRESIGNED_URL' \\ --header 'Content-Type: application/pdf' \\ --data-binary '@/path/to/annual-report-2025.pdf'\
+          \ \n Initiate the sync job. Set integration_id and root_folder_id to the values returned in step 1. Set each upload_key to the key returned\
+          \ for that file in step 2. \n POST /services/data/v1.0/content/management \n { \"request_meta\" : { \"integration_id\" : \"INTEGRATI"
+  /services/data/auth_token:
+    post:
+      operationId: post_services_data_auth_token
+      tags:
+      - Services
+      summary: Exchange your credentials for a Bearer token
+      x-source: https://developer.mindtickle.com/docs/getting-started
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /services/data/v1.0/content/management/{executionId}:
+    get:
+      operationId: get_services_data_v1_0_content_management_executionId
+      tags:
+      - Services
+      summary: Check content management job status
+      description: Monitor the progress and final outcome of a job using its execution_id.
+      x-source: https://developer.mindtickle.com/docs/content-center
+      parameters:
+      - name: executionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /services/data/v1.0/content/upload-url:
+    get:
+      operationId: get_services_data_v1_0_content_upload_url
+      tags:
+      - Services
+      summary: GET /services/data/v1.0/content/upload-url
+      x-source: https://developer.mindtickle.com/docs/content-center
+      parameters:
+      - name: file_name
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServicesDataV10ContentUploadUrlResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location 'https://api.mindtickle.com/services/data/v1.0/content/upload-url?file_name=annual-report-2025.pdf' \\ --header\
+          \ 'Authorization: Bearer ACCESS_TOKEN' \n Upload the file with a PUT request to the pre-signed URL returned in the previous step. Use\
+          \ that URL exactly as returned, even when it has a different host. Do not send your Mindtickle Bearer token to the upload host. "
+  /services/data/v1.0/content/{contentid}:
+    post:
+      operationId: post_services_data_v1_0_content_contentid
+      tags:
+      - Services
+      summary: POST /services/data/v1.0/content/integration
+      x-source: https://developer.mindtickle.com/docs/content-center
+      parameters:
+      - name: contentid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServicesDataV10ContentContentidRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostServicesDataV10ContentContentidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location 'https://api.mindtickle.com/services/data/v1.0/content/integration' \\ --header 'Authorization: Bearer ACCESS_TOKEN'\
+          \ \\ --header 'Content-Type: application/json' \\ --data '{ \"source_name\": \"AEM_DAM\", \"root_folder_name\": \"Marketing Content\"\
+          \ }' \n Get an upload URL for the first file. Repeat this request and the upload step for every file in the job. \n GET /services/data/v1.0/content/up"
+        collapsed_from: 2 example path(s) differing only at contentId
+components:
+  schemas:
+    PostApiAssethubV2AssetsAsyncRequest:
+      type: object
+      properties:
+        assets:
+          type: array
+          description: Array of asset objects to create. Maximum 50 assets per request.
+        user_id:
+          type: string
+          description: ID of the user performing the operation. Must have the DEVELOP_ASSETS permission.
+        assets[].file_id:
+          type: string
+          description: ID of the file in Content Center. Must be a valid, supported file type.
+        assets[].hubs:
+          type: array
+          description: List of valid hub IDs to add the asset to.
+        assets[].properties:
+          type: object
+          description: Metadata for the asset.
+        assets[].properties.name:
+          type: string
+          description: Display name of the asset. Maximum 250 characters. Cannot contain / or \.
+        assets[].properties.description:
+          type: string
+          description: Asset description. Maximum 1,000 characters, excluding HTML tags.
+        assets[].properties.status:
+          type: string
+          description: Asset state. REFERENCE_ASSET_STATE_PUBLISHED or REFERENCE_ASSET_STATE_DRAFT.
+        assets[].properties.asset_owner:
+          type: string
+          description: Email of the asset owner. The user must have the necessary permissions.
+        assets[].properties.allow_download:
+          type: boolean
+          description: 'Whether users can download the asset. Default: true.'
+        assets[].properties.usage:
+          type: string
+          description: Sharing type. SHARING_TYPE_INTERNAL or SHARING_TYPE_EXTERNAL.
+        assets[].properties.allow_mix_and_match:
+          type: boolean
+          description: 'Whether the asset can be mixed with others. Default: false.'
+        assets[].properties.allow_edit_content:
+          type: boolean
+          description: 'Whether users can edit content. Default: false.'
+        assets[].properties.allow_save_to_drive:
+          type: boolean
+          description: 'Whether users can save to external drives. Default: false.'
+        assets[].properties.expiry_date:
+          type: string
+          description: Expiration date in YYYY-MM-DD format. Must be a future date.
+        assets[].properties.expiry_reminder:
+          type: string
+          description: Reminder setting for expiration.
+        assets[].properties.file_update_reminder:
+          type: string
+          description: Reminder setting for file updates.
+        assets[].properties.attributes:
+          type: array
+          description: Attributes to tag the asset.
+      required:
+      - assets
+      - user_id
+      - assets[].file_id
+      - assets[].hubs
+      - assets[].properties
+      - assets[].properties.status
+    PostApiAssethubV2AssetsAsyncResponse:
+      type: object
+      properties:
+        execution_id:
+          type: string
+          description: ID to track the async operation status.
+        request_id:
+          type: string
+          description: Unique ID for the request.
+        message:
+          type: string
+          description: System message. Present only if it is not empty.
+    GetApiAssethubV2AssetsAsyncExecutionidResponse:
+      type: object
+      properties:
+        execution_id:
+          type: string
+          description: ID to track the async operation status.
+        status:
+          type: string
+          description: 'Execution status: in_progress, success, failed, not_dispatched.'
+        total_tasks:
+          type: integer
+          description: Total number of tasks.
+        completed_tasks:
+          type: integer
+          description: Number of completed tasks.
+        failed_tasks:
+          type: integer
+          description: Number of failed tasks.
+        tasks:
+          type: array
+          description: Array of task objects.
+        request_id:
+          type: string
+          description: Unique ID for the request.
+    PostApiAssethubV2HubRequest:
+      type: object
+      properties:
+        hub_name:
+          type: string
+          description: Name of the hub. Maximum 50 characters. Cannot contain / , \ , or .
+        access_type:
+          type: string
+          description: Hub access setting. HUB_ACCESS_PUBLIC or HUB_ACCESS_RESTRICTED.
+        description:
+          type: string
+          description: Description of the hub. Maximum 1,000 characters, excluding HTML tags.
+        user_id:
+          type: string
+          description: ID of the user performing the operation. Must have the HUB_MANAGEMENT permission.
+      required:
+      - hub_name
+      - access_type
+      - user_id
+    PostApiAssethubV2HubResponse:
+      type: object
+      properties:
+        hub_id:
+          type: string
+          description: Unique ID of the created hub.
+        hub_name:
+          type: string
+          description: Name of the created hub.
+        access_type:
+          type: string
+          description: Access setting of the hub.
+        description:
+          type: string
+          description: Description of the hub.
+        request_id:
+          type: string
+          description: Unique ID for the request.
+    PostApiAssethubV2HubHubidUsersManageRequest:
+      type: object
+      properties:
+        user_id:
+          type: string
+          description: Authorizer user ID. Must be a valid hex string.
+        user_details:
+          type: array
+          description: List of user entries to add or remove. Maximum 50 entries per request.
+        user_details[].user_id:
+          type: string
+          description: User ID. Primary identifier. Required if username is omitted. Takes precedence if both are provided.
+        user_details[].username:
+          type: string
+          description: Username. Required if user_id is omitted.
+        user_details[].action:
+          type: string
+          description: Operation to perform. ADD shares access to the hub, REMOVE revokes access to the hub.
+      required:
+      - user_id
+      - user_details
+      - user_details[].action
+    PostApiAssethubV2HubHubidUsersManageResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: Unique ID for the request.
+        hub_id:
+          type: string
+          description: The hub ID.
+        status:
+          type: string
+          description: Overall status of the operation. SUCCESS , PARTIAL_SUCCESS , or FAILED.
+        success:
+          type: array
+          description: List of successfully processed entries.
+        failed:
+          type: array
+          description: List of failed entries, each with an error reason.
+    PostPublicGraphapiRequest:
+      type: object
+      properties:
+        query:
+          type: string
+        variables:
+          type: object
+    PostPublicGraphapiResponse:
+      type: object
+      properties:
+        line:
+          type: string
+        column:
+          type: string
+    PutReportsReportidAnnualPdfResponse:
+      type: object
+      properties:
+        request_meta:
+          type: object
+          properties:
+            integration_id:
+              type: string
+            root_folder_id:
+              type: string
+        entities:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              operation:
+                type: string
+              path:
+                type: string
+              upload_key:
+                type: string
+              metadata:
+                type: object
+                properties:
+                  file_name:
+                    type: string
+                  source_path:
+                    type: string
+    GetServicesDataV10ContentUploadUrlResponse:
+      type: object
+      properties:
+        request_meta:
+          type: object
+          properties:
+            integration_id:
+              type: string
+            root_folder_id:
+              type: string
+        entities:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              operation:
+                type: string
+              path:
+                type: string
+              upload_key:
+                type: string
+              metadata:
+                type: object
+                properties:
+                  file_name:
+                    type: string
+                  source_path:
+                    type: string
+    PostServicesDataV10ContentContentidRequest:
+      type: object
+      properties:
+        source_name:
+          type: string
+        root_folder_name:
+          type: string
+    PostServicesDataV10ContentContentidResponse:
+      type: object
+      properties:
+        request_meta:
+          type: object
+          properties:
+            integration_id:
+              type: string
+            root_folder_id:
+              type: string
+        entities:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              operation:
+                type: string
+              path:
+                type: string
+              upload_key:
+                type: string
+              metadata:
+                type: object
+                properties:
+                  file_name:
+                    type: string
+                  source_path:
+                    type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api
+- name: Public
+- name: Reports
+- name: Services

@@ -1,11 +1,13 @@
 aid: mindtickle
+
 name: Mindtickle
-description: Mindtickle is an AI-powered revenue productivity platform that unifies
-  sales enablement, training, coaching, conversation intelligence, and digital sales
-  rooms into a single solution. It provides REST and GraphQL APIs for managing readiness
-  programs, user provisioning, content, call intelligence, and analytics for revenue
-  teams.
+
+description: Mindtickle is an AI-powered revenue productivity platform that unifies sales enablement, training, coaching, conversation intelligence,
+  and digital sales rooms into a single solution. It provides REST and GraphQL APIs for managing readiness programs, user provisioning, content,
+  call intelligence, and analytics for revenue teams.
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -17,6 +19,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: enterprise
   onboarding: unknown
@@ -29,11 +32,17 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mindtickle.png
+
 url: https://raw.githubusercontent.com/api-evangelist/mindtickle/refs/heads/main/apis.yml
+
 created: '2026-06-13'
+
 modified: '2026-08-14'
+
 specificationVersion: '0.23'
+
 tags:
 - Sales Enablement
 - Revenue Productivity
@@ -44,60 +53,28 @@ tags:
 - Content Management
 - Call AI
 - Revenue Intelligence
-apis:
-- aid: mindtickle:mindtickle-rest-api
-  name: Mindtickle REST API
-  description: Core REST API for managing users, groups, modules, learner details,
-    and reporting within the Mindtickle revenue productivity platform. Supports SCIM-based
-    user provisioning and returns JSON responses.
-  humanURL: https://www.mindtickle.com/platform/integrations/
-  baseURL: https://api.mindtickle.com
-  tags:
-  - User
-  - Group
-  - Modules
-  - Reporting
-  - Analytics
-  tags_raw:
-  - Users
-  - Groups
-  - Modules
-  - Reporting
-  - Analytics
-  properties:
-  - type: Documentation
-    url: https://www.mindtickle.com/platform/integrations/
-  - type: Authentication
-    url: https://www.mindtickle.com/technical-and-organizational-security-measures/
-- aid: mindtickle:mindtickle-call-ai-graphql-api
-  name: Mindtickle Call AI Public API
-  description: GraphQL public API providing programmatic access to call recordings,
-    transcriptions, coaching scores, and conversation intelligence data from the Mindtickle
-    Call AI platform. Authenticated via OAuth 2.0.
-  humanURL: https://www.mindtickle.com/call-ai-public-api-mindtickle/
-  baseURL: https://api-gateway.callai.www.mindtickle.com/public/graphapi
-  tags:
-  - Call Intelligence
-  - Recording
-  - Coaching
-  - GraphQL
-  - Authentication
-  tags_raw:
-  - Call Intelligence
-  - Recordings
-  - Coaching
-  - GraphQL
-  - OAuth
-  properties:
-  - type: Documentation
-    url: https://www.mindtickle.com/call-ai-public-api-mindtickle/
-  - type: APIReference
-    url: https://www.mindtickle.com/call-ai-public-api-mindtickle/
-  - url: graphql/mindtickle-graphql.md
-    type: GraphQL
-  - url: graphql/mindtickle-schema.graphql
-    type: GraphQLSchema
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
 common:
+- type: Spectral
+  url: rules/mindtickle-rules.yml
+- type: JSONLD
+  url: json-ld/mindtickle-context.jsonld
+- type: Vocabulary
+  url: vocabulary/mindtickle-vocabulary.yml
+- type: Deprecation
+  url: lifecycle/mindtickle-lifecycle.yml
+- type: Hosts
+  url: hosts/mindtickle-hosts.yml
+- type: Vendors
+  url: vendors/mindtickle-vendors.yml
+- type: SDKs
+  url: packages/mindtickle-packages.yml
+- type: GettingStarted
+  url: https://www.mindtickle.com/solutions/sales-onboarding-tools-software/
 - type: Pricing
   url: https://www.mindtickle.com/platform/
 - type: TrustCenter
@@ -166,11 +143,97 @@ common:
   url: data-model/mindtickle-data-model.yml
 - type: GitHubOrganization
   url: https://github.com/MindTickle
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
+apis:
+- aid: mindtickle:mindtickle-rest-api
+  name: Mindtickle REST API
+  description: Core REST API for managing users, groups, modules, learner details, and reporting within the Mindtickle revenue productivity platform.
+    Supports SCIM-based user provisioning and returns JSON responses.
+  humanURL: https://www.mindtickle.com/platform/integrations/
+  baseURL: https://api.mindtickle.com
+  tags:
+  - User
+  - Group
+  - Modules
+  - Reporting
+  - Analytics
+  tags_raw:
+  - Users
+  - Groups
+  - Modules
+  - Reporting
+  - Analytics
+  properties:
+  - type: Documentation
+    url: https://www.mindtickle.com/platform/integrations/
+  - type: Authentication
+    url: https://www.mindtickle.com/technical-and-organizational-security-measures/
+- aid: mindtickle:mindtickle-call-ai-graphql-api
+  name: Mindtickle Call AI Public API
+  description: GraphQL public API providing programmatic access to call recordings, transcriptions, coaching scores, and conversation intelligence
+    data from the Mindtickle Call AI platform. Authenticated via OAuth 2.0.
+  humanURL: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+  baseURL: https://api-gateway.callai.www.mindtickle.com/public/graphapi
+  tags:
+  - Call Intelligence
+  - Recording
+  - Coaching
+  - GraphQL
+  - Authentication
+  tags_raw:
+  - Call Intelligence
+  - Recordings
+  - Coaching
+  - GraphQL
+  - OAuth
+  properties:
+  - type: Documentation
+    url: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+  - type: APIReference
+    url: https://www.mindtickle.com/call-ai-public-api-mindtickle/
+  - url: graphql/mindtickle-graphql.md
+    type: GraphQL
+  - url: graphql/mindtickle-schema.graphql
+    type: GraphQLSchema
+- aid: mindtickle:mindtickle-api
+  name: Mindtickle API
+  description: 'Mindtickle API as documented publicly: 10 operations. Contract generated from the documentation by API Evangelist (2026-10-12);
+
+    not the provider''s own document.'
+  humanURL: https://developer.mindtickle.com/docs/call-ai/graphql-api
+  baseURL: https://api.mindtickle.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/mindtickle-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-assets-async-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-get-api-assethub-v2-assets-async-executionid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-response-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-get-services-data-v10-content-upload-url-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI, GraphQL schema, or other machine-readable contract found on the API host despite probing known endpoints.
+  evidence:
+  - url: https://api.mindtickle.com/openapi.json
+    status: 400
+  - url: https://api.mindtickle.com/openapi.yaml
+    status: 400
+  - url: https://api.mindtickle.com/v1/openapi.json
+    status: 400
+
 x-enrichment:
-  date: '2026-08-14'
+  date: '2026-10-12'
   status: enriched
-  artifacts_added: 13
-  pass: local-v1
+  artifacts_added: 19
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

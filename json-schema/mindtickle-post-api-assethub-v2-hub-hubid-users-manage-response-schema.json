@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/mindtickle/main/json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-response-schema.json",
+  "title": "PostApiAssethubV2HubHubidUsersManageResponse",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostApiAssethubV2HubHubidUsersManageResponse",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "description": "Unique ID for the request."
+    },
+    "hub_id": {
+      "type": "string",
+      "description": "The hub ID."
+    },
+    "status": {
+      "type": "string",
+      "description": "Overall status of the operation. SUCCESS , PARTIAL_SUCCESS , or FAILED."
+    },
+    "success": {
+      "type": "array",
+      "description": "List of successfully processed entries."
+    },
+    "failed": {
+      "type": "array",
+      "description": "List of failed entries, each with an error reason."
+    }
+  }
+}

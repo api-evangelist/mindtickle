@@ -1,0 +1,18 @@
+generated: '2026-10-12'
+source: https://www.mindtickle.com/trust/
+method: probed
+signals:
+  data_subject_request:
+    evidence:
+      - source: https://www.mindtickle.com/trust/
+        http_status: 200
+        fetched: "true"
+        quote: "Your data stays yours. We don’t sell it ever. It’s only shared with trusted partners to deliver our services. To exercise your rights, contact us or submit the Individual Rights Request Form."
+    note: Provides data subject rights request process.
+  subprocessors:
+    evidence:
+      - source: https://www.mindtickle.com/trust/
+        http_status: 200
+        fetched: "true"
+        quote: "Your data is in good hands. We thoroughly vet every sub-processor and annually perform their review. Check out who we work with in our Sub-processor Repository."
+    note: States vetting and list of sub‑processors.

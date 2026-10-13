@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/mindtickle/main/json-schema/mindtickle-get-services-data-v10-content-upload-url-response-schema.json",
+  "title": "GetServicesDataV10ContentUploadUrlResponse",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/GetServicesDataV10ContentUploadUrlResponse",
+  "type": "object",
+  "properties": {
+    "request_meta": {
+      "type": "object",
+      "properties": {
+        "integration_id": {
+          "type": "string"
+        },
+        "root_folder_id": {
+          "type": "string"
+        }
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "upload_key": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "file_name": {
+                "type": "string"
+              },
+              "source_path": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/mindtickle/main/json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-request-schema.json",
+  "title": "PostApiAssethubV2HubHubidUsersManageRequest",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/PostApiAssethubV2HubHubidUsersManageRequest",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Authorizer user ID. Must be a valid hex string."
+    },
+    "user_details": {
+      "type": "array",
+      "description": "List of user entries to add or remove. Maximum 50 entries per request."
+    },
+    "user_details[].user_id": {
+      "type": "string",
+      "description": "User ID. Primary identifier. Required if username is omitted. Takes precedence if both are provided."
+    },
+    "user_details[].username": {
+      "type": "string",
+      "description": "Username. Required if user_id is omitted."
+    },
+    "user_details[].action": {
+      "type": "string",
+      "description": "Operation to perform. ADD shares access to the hub, REMOVE revokes access to the hub."
+    }
+  },
+  "required": [
+    "user_id",
+    "user_details",
+    "user_details[].action"
+  ]
+}

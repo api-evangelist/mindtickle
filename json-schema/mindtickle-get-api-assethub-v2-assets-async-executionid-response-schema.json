@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/mindtickle/main/json-schema/mindtickle-get-api-assethub-v2-assets-async-executionid-response-schema.json",
+  "title": "GetApiAssethubV2AssetsAsyncExecutionidResponse",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/mindtickle-openapi-generated.yml#/components/schemas/GetApiAssethubV2AssetsAsyncExecutionidResponse",
+  "type": "object",
+  "properties": {
+    "execution_id": {
+      "type": "string",
+      "description": "ID to track the async operation status."
+    },
+    "status": {
+      "type": "string",
+      "description": "Execution status: in_progress, success, failed, not_dispatched."
+    },
+    "total_tasks": {
+      "type": "integer",
+      "description": "Total number of tasks."
+    },
+    "completed_tasks": {
+      "type": "integer",
+      "description": "Number of completed tasks."
+    },
+    "failed_tasks": {
+      "type": "integer",
+      "description": "Number of failed tasks."
+    },
+    "tasks": {
+      "type": "array",
+      "description": "Array of task objects."
+    },
+    "request_id": {
+      "type": "string",
+      "description": "Unique ID for the request."
+    }
+  }
+}
