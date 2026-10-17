@@ -147,8 +147,9 @@ common:
 apis:
 - aid: mindtickle:mindtickle-rest-api
   name: Mindtickle REST API
-  description: Core REST API for managing users, groups, modules, learner details, and reporting within the Mindtickle revenue productivity platform.
-    Supports SCIM-based user provisioning and returns JSON responses.
+  description: >-
+    Core REST API for managing users, groups, modules, learner details, and reporting within the Mindtickle
+    revenue productivity platform. Supports SCIM-based user provisioning and returns JSON responses.
   humanURL: https://www.mindtickle.com/platform/integrations/
   baseURL: https://api.mindtickle.com
   tags:
@@ -170,8 +171,9 @@ apis:
     url: https://www.mindtickle.com/technical-and-organizational-security-measures/
 - aid: mindtickle:mindtickle-call-ai-graphql-api
   name: Mindtickle Call AI Public API
-  description: GraphQL public API providing programmatic access to call recordings, transcriptions, coaching scores, and conversation intelligence
-    data from the Mindtickle Call AI platform. Authenticated via OAuth 2.0.
+  description: >-
+    GraphQL public API providing programmatic access to call recordings, transcriptions, coaching scores,
+    and conversation intelligence data from the Mindtickle Call AI platform. Authenticated via OAuth 2.0.
   humanURL: https://www.mindtickle.com/call-ai-public-api-mindtickle/
   baseURL: https://api-gateway.callai.www.mindtickle.com/public/graphapi
   tags:
@@ -195,17 +197,16 @@ apis:
     type: GraphQL
   - url: graphql/mindtickle-schema.graphql
     type: GraphQLSchema
-- aid: mindtickle:mindtickle-api
-  name: Mindtickle API
-  description: 'Mindtickle API as documented publicly: 10 operations. Contract generated from the documentation by API Evangelist (2026-10-12);
-
-    not the provider''s own document.'
-  humanURL: https://developer.mindtickle.com/docs/call-ai/graphql-api
+- aid: mindtickle:mindtickle-assethub-api
+  name: Mindtickle Assethub API
+  description: The Assethub API from Mindtickle — 4 operation(s) for assethub.
+  humanURL: https://www.mindtickle.com/platform/integrations/
   baseURL: https://api.mindtickle.com
+  tags:
+  - Assethub
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/mindtickle-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/mindtickle-assethub-api-openapi.yml
   - type: JSONSchema
     url: json-schema/mindtickle-post-api-assethub-v2-assets-async-request-schema.json
   - type: JSONSchema
@@ -218,7 +219,72 @@ apis:
     url: json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-response-schema.json
   - type: JSONSchema
     url: json-schema/mindtickle-get-services-data-v10-content-upload-url-response-schema.json
-
+- aid: mindtickle:mindtickle-public-api
+  name: Mindtickle Public API
+  description: The Public API from Mindtickle — 1 operation(s) for public.
+  humanURL: https://www.mindtickle.com/platform/integrations/
+  baseURL: https://api.mindtickle.com
+  tags:
+  - Public
+  properties:
+  - type: OpenAPI
+    url: openapi/mindtickle-public-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-assets-async-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-get-api-assethub-v2-assets-async-executionid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-response-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-get-services-data-v10-content-upload-url-response-schema.json
+- aid: mindtickle:mindtickle-reports-api
+  name: Mindtickle Reports API
+  description: The Reports API from Mindtickle — 1 operation(s) for reports.
+  humanURL: https://www.mindtickle.com/platform/integrations/
+  baseURL: https://api.mindtickle.com
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/mindtickle-reports-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-assets-async-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-get-api-assethub-v2-assets-async-executionid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-response-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-get-services-data-v10-content-upload-url-response-schema.json
+- aid: mindtickle:mindtickle-services-api
+  name: Mindtickle Services API
+  description: The Services API from Mindtickle — 4 operation(s) for services.
+  humanURL: https://www.mindtickle.com/platform/integrations/
+  baseURL: https://api.mindtickle.com
+  tags:
+  - Services
+  properties:
+  - type: OpenAPI
+    url: openapi/mindtickle-services-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-assets-async-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-get-api-assethub-v2-assets-async-executionid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-request-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-response-schema.json
+  - type: JSONSchema
+    url: json-schema/mindtickle-get-services-data-v10-content-upload-url-response-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec

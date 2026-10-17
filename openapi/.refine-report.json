@@ -1,0 +1,26 @@
+{
+  "provider": "mindtickle",
+  "sources": [
+    "_ae-authored/mindtickle-openapi-generated.yml"
+  ],
+  "outputs": [
+    "mindtickle-assethub-api-openapi.yml",
+    "mindtickle-public-api-openapi.yml",
+    "mindtickle-reports-api-openapi.yml",
+    "mindtickle-services-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "mindtickle-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "mindtickle-openapi-generated.yml: tagged paths POST /api/assethub/v2/assets/async -> Assethub",
+    "mindtickle-openapi-generated.yml: tagged paths GET /api/assethub/v2/assets/async/{executionId} -> Assethub",
+    "mindtickle-openapi-generated.yml: tagged paths POST /api/assethub/v2/hub -> Assethub",
+    "mindtickle-openapi-generated.yml: tagged paths POST /api/assethub/v2/hub/{hubId}/users/manage -> Assethub",
+    "mindtickle-openapi-generated.yml: declared missing tag: Assethub",
+    "apis.yml register: written (+4 apis, 6 total)"
+  ],
+  "skipped": []
+}

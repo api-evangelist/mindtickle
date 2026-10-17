@@ -1,0 +1,77 @@
+openapi: 3.2.0
+info:
+  title: Mindtickle Public API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 10 operation(s) read from 9 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Mindtickle has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 6
+    pages-with-code: 2
+    pages-read: 9
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.mindtickle.com/docs/call-ai/graphql-api
+  - https://developer.mindtickle.com/docs/call-ai/graphql-api/query-call-data
+  - https://developer.mindtickle.com/docs/call-ai/graphql-api/download-call-recordings
+  - https://developer.mindtickle.com/docs/asset-hub/hubs/manage-user-access-for-restricted-hubs
+  - https://developer.mindtickle.com/docs/content-center
+  - https://developer.mindtickle.com/docs/getting-started
+  - https://developer.mindtickle.com/docs/getting-started.md
+  - https://developer.mindtickle.com/docs/asset-hub/hubs/create-a-hub
+  - https://developer.mindtickle.com/docs/asset-hub/assets/create-assets
+servers:
+- url: https://api.mindtickle.com
+security:
+- bearer: []
+tags:
+- name: Public
+paths:
+  /public/graphapi:
+    post:
+      operationId: post_public_graphapi
+      tags:
+      - Public
+      summary: POST /public/graphapi
+      x-source: https://developer.mindtickle.com/docs/call-ai/graphql-api
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPublicGraphapiRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPublicGraphapiResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --location ''https://api-gateway.callai.mindtickle.com/public/graphapi'' \ --header ''Content-Type: application/json'' \ --header ''Authorization: Bearer ACCESS_TOKEN'' \ --data ''{"query":"query {\n recordingsV2(\n first: 1,\n after: \"0\",\n filters: {\n categoryId: \"1\"\n }\n sort: {\n sortType: \"start_date\",\n sortOrder: asc\n }\n )\n {\n edges {\n node {\n id\n mediaUrls {\n streamingSource\'
+components:
+  schemas:
+    PostPublicGraphapiRequest:
+      type: object
+      properties:
+        query:
+          type: string
+        variables:
+          type: object
+    PostPublicGraphapiResponse:
+      type: object
+      properties:
+        line:
+          type: string
+        column:
+          type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
