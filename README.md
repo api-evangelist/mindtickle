@@ -64,39 +64,157 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Mindtickle is an AI-powered revenue productivity platform that unifies sales enablement, training, coaching, conversation intelligence, and digital sales rooms into a single solution for customer-facing revenue teams.
+Mindtickle is an AI-powered revenue productivity platform that unifies sales enablement, training, coaching, conversation intelligence, and digital sales rooms into a single solution. It provides REST and GraphQL APIs for managing readiness programs, user provisioning, content, call intelligence, and analytics for revenue teams.
 
-## APIs
+**Areas:** Sales Enablement · Revenue Productivity · Sales Readiness · Coaching · Conversation Intelligence · LMS · Content Management · Call AI · Revenue Intelligence
 
-- **REST API** — Core platform API for users, groups, modules, learner analytics, and reporting (`https://api.mindtickle.com`). Authenticated via JWT Bearer token (API Key + Secret Key + Client ID obtained from the Mindtickle admin console).
-- **Call AI GraphQL API** — Public GraphQL API for call recordings, transcriptions, coaching scores, and conversation intelligence (`https://api-gateway.callai.www.mindtickle.com/public/graphapi`). Authenticated via OAuth 2.0.
+## Mindtickle on APIs.io
 
-## Authentication
+Everything profiled for Mindtickle is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mindtickle/](https://apis.io/providers/mindtickle/)** — or go straight to one of the APIs or properties below.
 
-- JWT Bearer token (REST API): Generate credentials under Settings > API Access in the Mindtickle admin console. Tokens expire after 1 hour.
-- OAuth 2.0 (Call AI GraphQL API): Pass the access token in the Authorization header of GraphQL requests.
+### APIs (6)
 
-## Rate Limits
+- [Mindtickle REST API](https://apis.io/apis/mindtickle/mindtickle-rest-api/) — Core REST API for managing users, groups, modules, learner details, and reporting within the Mindtickle revenue productivity platform. Supports SCIM-based…
+- [Mindtickle Call AI Public API](https://apis.io/apis/mindtickle/mindtickle-call-ai-graphql-api/) — GraphQL public API providing programmatic access to call recordings, transcriptions, coaching scores, and conversation intelligence data from the Mindtickle…
+- [Mindtickle Assethub API](https://apis.io/apis/mindtickle/mindtickle-assethub-api/) — The Assethub API from Mindtickle — 4 operation(s) for assethub.
+- [Mindtickle Public API](https://apis.io/apis/mindtickle/mindtickle-public-api/) — The Public API from Mindtickle — 1 operation(s) for public.
+- [Mindtickle Reports API](https://apis.io/apis/mindtickle/mindtickle-reports-api/) — The Reports API from Mindtickle — 1 operation(s) for reports.
+- [Mindtickle Services API](https://apis.io/apis/mindtickle/mindtickle-services-api/) — The Services API from Mindtickle — 4 operation(s) for services.
 
-- 4 requests per second per account
-- 60 requests per minute per account
-- HTTP 429 returned when limits are exceeded; implement exponential backoff.
+### Published properties
 
-## Key Platform Capabilities
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Sales readiness and onboarding programs
-- Content management and assignment
-- Call AI: recording, transcription, coaching, and scoring
-- Digital sales rooms for buyer engagement
-- Revenue intelligence and forecasting
-- 100+ pre-built integrations (Salesforce, Microsoft, Google, Workday, Slack, and more)
-- SCIM, SAML, OpenID Connect, JWT SSO support
+#### GraphQL (1)
 
-## Links
+GraphQL schemas.
 
-- Website: https://www.mindtickle.com/
-- Platform: https://www.mindtickle.com/platform/
-- Integrations: https://www.mindtickle.com/platform/integrations/
-- Blog: https://www.mindtickle.com/blog/
-- Status: https://status.mindtickle.com
-- Support: https://help.mindtickle.com/
+- [Mindtickle GraphQL API](https://apis.io/graphqls/mindtickle/mindtickle-graphql/)
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [GetApiAssethubV2AssetsAsyncExecutionidResponse](https://apis.io/schemas/mindtickle/mindtickle-get-api-assethub-v2-assets-async-executionid-response/)
+- [GetServicesDataV10ContentUploadUrlResponse](https://apis.io/schemas/mindtickle/mindtickle-get-services-data-v10-content-upload-url-response/)
+- [PostApiAssethubV2AssetsAsyncRequest](https://apis.io/schemas/mindtickle/mindtickle-post-api-assethub-v2-assets-async-request/)
+- [PostApiAssethubV2HubHubidUsersManageRequest](https://apis.io/schemas/mindtickle/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-request/)
+- [PostApiAssethubV2HubHubidUsersManageResponse](https://apis.io/schemas/mindtickle/mindtickle-post-api-assethub-v2-hub-hubid-users-manage-response/)
+- [PostApiAssethubV2HubRequest](https://apis.io/schemas/mindtickle/mindtickle-post-api-assethub-v2-hub-request/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Mindtickle Context](https://apis.io/jsonld/mindtickle/mindtickle-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Mindtickle API Rules](https://apis.io/rules/mindtickle/mindtickle-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Mindtickle Authentication](https://apis.io/security/mindtickle/mindtickle-authentication/)
+- [Mindtickle Domain Security](https://apis.io/security/mindtickle/mindtickle-domain-security/)
+- [Mindtickle Trust Center](https://apis.io/security/mindtickle/mindtickle-trust-center/)
+- [Mindtickle Vulnerability Disclosure](https://apis.io/security/mindtickle/mindtickle-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Mindtickle Scopes](https://apis.io/scopes/mindtickle/mindtickle-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Mindtickle Plans Pricing](https://apis.io/plans/mindtickle/mindtickle-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Mindtickle Rate Limits](https://apis.io/rate-limits/mindtickle/mindtickle-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Mindtickle Finops](https://apis.io/finops/mindtickle/mindtickle-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.mindtickle.com/)
+- [Documentation](https://www.mindtickle.com/platform/integrations/)
+- [Getting started](https://www.mindtickle.com/solutions/sales-onboarding-tools-software/)
+- [Pricing](https://www.mindtickle.com/platform/)
+- [Support](https://help.mindtickle.com/)
+- [Blog](https://www.mindtickle.com/blog/)
+- [Security](https://www.mindtickle.com/security/policy/)
+- [Compliance](https://www.mindtickle.com/compliance/)
+- [Terms of service](https://www.mindtickle.com/terms-of-service/)
+- [Privacy policy](https://www.mindtickle.com/privacy-policy/)
+- [GitHub](https://github.com/MindTickle)
+- [Status](https://status.mindtickle.com/)
+
+## API Evangelist rating
+
+**Kin Score 50.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 79.5 |
+| Contract quality | 34.6 |
+| Contract governance | 35.6 |
+| Operational transparency | 57.9 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 64.5 |
+
+**Agent readiness 41.2** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 37.3** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mindtickle/](https://apis.io/providers/mindtickle/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Mindtickle: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mindtickle/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
